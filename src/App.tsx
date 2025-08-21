@@ -4,8 +4,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { useLayoutEffect } from "react";
 import MainLayout from "@/components/layouts/MainLayout";
 import Home from "./pages/Home";
-import Stack from "./pages/Stack";
-import Contact from "./pages/Contact";
 
 function App() {
 
@@ -25,8 +23,6 @@ function App() {
         <MainLayout>
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/contact" element={<Contact />} /> */}
-            <Route path="/stack" element={<Stack />} />
           </Routes>
         </MainLayout>
       </Router>
