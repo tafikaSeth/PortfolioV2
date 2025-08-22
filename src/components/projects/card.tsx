@@ -21,7 +21,7 @@ export function ProjectCard(props: ProjectProps) {
             <CardFooter className="bg-background border border-b-gray-90/50 flex justify-center rounded-b-sm cursor-pointer w-full font-bold py-2">
                 <Dialog>
                     <DialogTrigger asChild>
-                        <span className="text-foreground">
+                        <span className="text-foreground sansation-bold">
                             {title}
                         </span>
                     </DialogTrigger>

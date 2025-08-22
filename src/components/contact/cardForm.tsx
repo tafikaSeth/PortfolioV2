@@ -15,15 +15,15 @@ export function CardContact() {
   return (
     <Card className="w-full max-w-lg">
       <CardHeader>
-        <CardTitle>Envoyez-moi votre message</CardTitle>
-        <CardDescription>
+        <CardTitle className="sansation-bold">Envoyez-moi votre message</CardTitle>
+        <CardDescription className="sansation-regular">
           Entrez votre adresse e-mail ci-dessous
         </CardDescription>
       </CardHeader>
       <CardContent>
         <form>
           <div className="flex flex-col gap-6">
-            <div className="grid gap-2">
+            <div className="grid gap-2 sansation-bold">
               <Label htmlFor="email">Nom</Label>
               <Input
                 id="nom"
@@ -32,7 +32,7 @@ export function CardContact() {
                 required
               />
             </div>
-            <div className="grid gap-2">
+            <div className="grid gap-2 sansation-bold">
               <Label htmlFor="email">Adresse email</Label>
               <Input
                 id="email"
@@ -41,7 +41,7 @@ export function CardContact() {
                 required
               />
             </div>
-            <div className="grid gap-2">
+            <div className="grid gap-2 sansation-bold">
               <Label htmlFor="email">Sujet</Label>
               <Input
                 id="subject"
@@ -50,12 +50,12 @@ export function CardContact() {
                 required
               />
             </div>
-            <div className="grid gap-2">
-              <div className="flex items-center">
+            <div className="grid gap-2 sansation-bold">
+              <div className="flex items-center sansation-bold">
                 <Label htmlFor="password">Message</Label>
               </div>
               <Textarea
-                placeholder="Tell us a little bit about yourself"
+                placeholder=""
                 className="resize-none"
               />
             </div>
@@ -63,7 +63,7 @@ export function CardContact() {
         </form>
       </CardContent>
       <CardFooter className="flex-col gap-2">
-        <Button type="submit" className="w-full">
+        <Button type="submit" className="w-full sansation-bold">
           Envoyer votre email
         </Button>
       </CardFooter>

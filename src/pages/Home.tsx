@@ -37,14 +37,14 @@ export default function Home() {
           />
           <div className="flex flex-col gap-2 top-1/4 left-[18%] absolute md:top-1/4 md:left-[38%]">
             <motion.h1
-              className="text-4xl md:text-7xl font-bold text-white"
+              className="text-4xl md:text-7xl font-bold text-white sansation-bold"
               style={{ y: sm }}
               onMouseEnter={() => { setIsHovered(true) }}
               onMouseLeave={() => { setIsHovered(false) }}
             >
               SETH TAFIKA
             </motion.h1>
-            <motion.p style={{ y: de }} className="text-sm md:text-xl text-center font-bold text-white">DEVELOPPER FRONTEND & MOBILE</motion.p>
+            <motion.p style={{ y: de }} className="text-sm md:text-xl text-center font-bold text-white sansation-regular">DEVELOPPER FRONTEND & MOBILE</motion.p>
           </div>
         </div>
       </SectionWrapper>

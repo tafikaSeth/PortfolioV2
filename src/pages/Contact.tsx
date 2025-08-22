@@ -6,7 +6,7 @@ import { CardContact } from "@/components/contact/cardForm";
 const Contact = () => {
     return (
         <div className="flex flex-col gap-4">
-            <h1 className="text-xl text-center md:text-4xl md:text-left font-bold">Contact</h1>
+            <h1 className="text-xl text-center md:text-4xl md:text-left font-bold sansation-bold">Contact</h1>
             <div className="flex flex-col gap-4 md:flex md:flex-row md:gap-12 w-[100%] items-center justify-center">
                 <div className="grid grid-col-1 w-[90%] gap-4 md:grid md:grid-cols-2">
                     <CardText icon={<MapPin size={30} />} title="Adresse" description="Madagascar" />

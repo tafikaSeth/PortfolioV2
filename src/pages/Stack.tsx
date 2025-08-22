@@ -2,7 +2,7 @@ import SectionWrapper from "@/components/layouts/SectionWrapper";
 import { getImage } from "@/lib/cloudinary";
 import { AdvancedImage, lazyload } from "@cloudinary/react";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { StackCard } from "@/components/stack/card";
 import Slider from "react-slick";
@@ -32,40 +32,58 @@ export default function Stack() {
 
   const heroImage = getImage("stack3_udhk5g", 1920);
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const getWidth = () => {
+    setWindowWidth(window.innerWidth)
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', getWidth)
+    return () => {
+      window.removeEventListener('resize', getWidth)
+    }
+  }, [windowWidth])
+
+  const slidesToShow = windowWidth <= 480
+    ? 1
+    : windowWidth <= 600
+      ? 2
+      : 3;
+
   var settings = {
     dots: false,
     infinite: true,
     speed: 1000,
-    slidesToShow: 4,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplaySpeed: 2000,
     cssEase: "ease-in-out",
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ],
+    // responsive: [
+    //   {
+    //     breakpoint: 1024,
+    //     settings: {
+    //       slidesToShow: 3,
+    //       slidesToScroll: 3,
+    //       infinite: true,
+    //       dots: true
+    //     }
+    //   },
+    //   {
+    //     breakpoint: 768,
+    //     settings: {
+    //       slidesToShow: 2,
+    //       slidesToScroll: 2,
+    //       initialSlide: 2
+    //     }
+    //   },
+    //   {
+    //     breakpoint: 480,
+    //     settings: {
+    //       slidesToShow: 1,
+    //       slidesToScroll: 1
+    //     }
+    //   }
+    // ],
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
@@ -82,7 +100,7 @@ export default function Stack() {
           />
           <div ref={container} className=" flex flex-col gap-3 absolute w-1/3 top-1/3 left-1/6">
             <motion.h1
-              className="text-5xl font-bold text-white"
+              className="text-5xl sansation-bold"
               style={{ y: sm }}
               onMouseEnter={() => { setIsHovered(true) }}
               onMouseLeave={() => { setIsHovered(false) }}
@@ -92,7 +110,7 @@ export default function Stack() {
             <motion.p
               onMouseEnter={() => { setIsHovered(true) }}
               onMouseLeave={() => { setIsHovered(false) }}
-              className="text-xl font-semibold text-white text-justify"
+              className="text-xl sansation-regular text-justify"
               style={{ y: de }}
             >
               Les bons outils font les bons projets, j’ai construit mon stack autour de solutions modernes,
@@ -117,7 +135,7 @@ export default function Stack() {
 
         <div className="relative z-10">
           <motion.div ref={first} className="slider-container">
-            <h1 className="text-xl text-center md:text-2xl font-bold mb-3 md:text-left">Langages & tech web</h1>
+            <h1 className="text-xl text-center md:text-2xl font-bold mb-3 md:text-left sansation-bold">Langages & tech web</h1>
             <Slider {...settings}>
               {techs.map((tech, index) => (
                 <div key={index} className="px-5 md:px-4">
@@ -128,7 +146,7 @@ export default function Stack() {
           </motion.div>
 
           <motion.div ref={second} className="slider-container mt-8">
-            <h1 className="text-xl text-center md:text-2xl font-bold mb-3 md:text-left">Librairies & framework</h1>
+            <h1 className="text-xl text-center md:text-2xl font-bold mb-3 md:text-left sansation-bold">Librairies & framework</h1>
             <Slider {...settings}>
               {framework.map((tech, index) => (
                 <div key={index} className="px-5 md:px-4">
@@ -139,7 +157,7 @@ export default function Stack() {
           </motion.div>
 
           <motion.div ref={third} className="slider-container mt-8">
-            <h1 className="text-xl text-center md:text-2xl font-bold mb-3 md:text-left">Base de données</h1>
+            <h1 className="text-xl text-center md:text-2xl font-bold mb-3 md:text-left sansation-bold">Base de données</h1>
             <Slider {...settings}>
               {databases.map((tech, index) => (
                 <div key={index} className="px-5 md:px-4">
@@ -150,7 +168,7 @@ export default function Stack() {
           </motion.div>
 
           <motion.div ref={fourth} className="slider-container mt-8">
-            <h1 className="text-xl text-center md:text-2xl font-bold mb-3 md:text-left">Outils de versionning</h1>
+            <h1 className="text-xl text-center md:text-2xl font-bold mb-3 md:text-left sansation-bold">Outils de versionning</h1>
             <Slider {...settings}>
               {tech.map((tech, index) => (
                 <div key={index} className="px-5 md:px-4">

@@ -17,22 +17,22 @@ export function ModalProject({ image, title, content, stack, client, year, url }
             </div>
 
             <div className="bg-background p-6 space-y-4">
-                <h1 className="text-2xl font-bold">{title}</h1>
-                <p className="text-sm leading-relaxed">
+                <h1 className="text-2xl font-bold sansation-bold">{title}</h1>
+                <p className="text-sm leading-relaxed sansation-regular">
                     {content}.
                 </p>
 
                 <div className="text-sm space-y-1">
                     {client && (
                         <p>
-                            <span className="font-semibold">Client :</span> {client}
+                            <span className="font-semibold sansation-bold">Client :</span> {client}
                         </p>
                     )}
                     <p>
-                        <span className="font-semibold">Année :</span> {year}
+                        <span className="font-semibold sansation-bold">Année :</span> {year}
                     </p>
                     <p>
-                        <span className="font-semibold">URL :</span>{" "}
+                        <span className="font-semibold sansation-bold">URL :</span>{" "}
                         <a
                             href={url}
                             target="_blank"
@@ -53,7 +53,7 @@ export function ModalProject({ image, title, content, stack, client, year, url }
 
                 <Button
                     variant="secondary"
-                    className="w-full bg-chart-4 hover:bg-purple-950 text-white font-bold"
+                    className="w-full bg-background font-bold sansation-bold"
                     asChild
                 >
                     <a

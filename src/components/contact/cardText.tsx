@@ -20,10 +20,10 @@ export function CardText({ icon, title, description }: CardText) {
         <CardTitle className="text-3xl">
           {icon}
         </CardTitle>
-        <CardTitle className="text-lg">
+        <CardTitle className="text-lg sansation-bold">
           {title}
         </CardTitle>
-        <CardDescription>
+        <CardDescription className="sansation-regular">
           {description}
         </CardDescription>
       </CardHeader>
