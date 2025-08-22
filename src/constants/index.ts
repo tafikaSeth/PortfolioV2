@@ -1,8 +1,8 @@
 export const NAVIGATION = [
-    { name: "Home", link: "home" },
-    { name: "Projets", link: "projects" },
-    { name: "Stack", link: "stack" },
-    { name: "Contact", link: "contact" },
+    { name: "Home", link: "home", icon: "home" },
+    { name: "Projets", link: "projects", icon: "project" },
+    { name: "Stack", link: "stack", icon: "stack" },
+    { name: "Contact", link: "contact", icon: "contact" },
 ];
 
 export const PROJECTS = [
