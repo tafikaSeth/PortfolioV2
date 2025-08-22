@@ -11,7 +11,7 @@ export const PROJECTS = [
         image: "mikrea_bmvfan",
         content: "Intégration du site web du projet MikRea afin d'élargir mes compétences en développement frontend web",
         stack: ["NextJs", "Css"],
-        client: "Mikrea",
+        client: "Amis",
         year: 2023,
         url: "Pas encore en ligne"
     },
@@ -45,30 +45,21 @@ export const MOBILES = [
     {
         title: "Géolocalisation",
         image: "geo_ubtkqu",
-        content: "Intégration d'un site web pour lire, ajouter et télécharger une bande dessinée.",
+        content: "Création d'une application mobile pour geolocalisé des parkings, arrets à fianarantsoa avec une carte interactive",
         stack: ["Expo", "EAS Build", "Google maps", "Qgis", "OSM"],
         client: "PNUD",
         year: 2025,
-        url: "https://enjoyb-seth.vercel.app/"
+        url: ""
     },
     {
         title: "Generate",
         image: "generate_h39ehs",
-        content: "Intégration du site web du projet MikRea afin d'élargir mes compétences en développement frontend web",
+        content: "Crétion d'un application mobile pour générer et scanner des QRcode avec un interface plus attirante pour elargir mes compétences en développement mobile",
         stack: ["Expo", "EAS Build"],
         client: "Amis",
         year: 2025,
-        url: "Pas encore en ligne"
-    },
-    {
-        title: "Géolocalisation",
-        image: "geo_ubtkqu",
-        content: "Intégration d'un site web pour lire, ajouter et télécharger une bande dessinée.",
-        stack: ["Expo", "EAS Build"],
-        client: "PNUD",
-        year: 2025,
-        url: "https://enjoyb-seth.vercel.app/"
-    },
+        url: ""
+    }
 ];
 
 export const TEXTS = ["GET", "IN", "TOUCH"];

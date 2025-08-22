@@ -3,7 +3,6 @@ import { getImage } from "@/lib/cloudinary";
 import { AdvancedImage, lazyload } from "@cloudinary/react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
 import { StackCard } from "@/components/stack/card";
 import Slider from "react-slick";
 import NextArrow from "@/components/ui/arrow-next";
