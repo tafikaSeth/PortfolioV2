@@ -73,7 +73,7 @@ export default function Stack() {
           />
           <div ref={container} className="flex flex-col gap-3  w-[90%] left-1/12 absolute md:w-1/3 top-1/3 md:left-1/6">
             <motion.h1
-              className="text-xl md:text-5xl sansation-bold"
+              className="text-xl md:text-5xl sansation-bold text-white"
               style={{ y: sm }}
               onMouseEnter={() => { setIsHovered(true) }}
               onMouseLeave={() => { setIsHovered(false) }}
@@ -83,7 +83,7 @@ export default function Stack() {
             <motion.p
               onMouseEnter={() => { setIsHovered(true) }}
               onMouseLeave={() => { setIsHovered(false) }}
-              className="text-lg md:text-xl sansation-regular md:text-justify"
+              className="text-lg text-white md:text-xl sansation-regular md:text-justify"
               style={{ y: de }}
             >
               Les bons outils font les bons projets, j’ai construit mon stack autour de solutions modernes,
