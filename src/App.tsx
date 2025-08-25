@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { useLayoutEffect } from "react";
 import MainLayout from "@/components/layouts/MainLayout";
 import Home from "./pages/Home";
+import { Toaster } from "./components/ui/sonner";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <ThemeProvider defaultTheme="light">
+      <Toaster position="top-right" />
       <Router>
         <MainLayout>
           <Routes>

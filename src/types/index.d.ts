@@ -7,3 +7,8 @@ export interface ProjectProps {
     url: string
     stack: string[]
 }
+export interface ContactFormData {
+    from_name: string
+    email: string
+    message: string
+}

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { useForm } from "react-hook-form"
 import {
   Card,
   CardContent,
@@ -10,8 +11,24 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "../ui/textarea"
+import type { ContactFormData } from "@/types"
+import { sendEmail } from "@/serviceEmail/emailJs"
+import { toast } from "sonner"
 
 export function CardContact() {
+
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<ContactFormData>()
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      await sendEmail(data);
+      toast.success("Message envoyé avec succès 🎉");
+      reset();
+    } catch (error) {
+      console.error(error);
+      toast.error("Échec de l’envoi 😢");
+    }
+  };
+
   return (
     <Card className="w-full max-w-lg">
       <CardHeader>
@@ -20,8 +37,8 @@ export function CardContact() {
           Entrez votre adresse e-mail ci-dessous
         </CardDescription>
       </CardHeader>
-      <CardContent>
-        <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <CardContent>
           <div className="flex flex-col gap-6">
             <div className="grid gap-2 sansation-bold">
               <Label htmlFor="email">Nom</Label>
@@ -29,8 +46,9 @@ export function CardContact() {
                 id="nom"
                 type="text"
                 placeholder="Votre nom"
-                required
+                {...register('from_name', { required: 'Nom obligatoire' })}
               />
+              {errors.from_name && <p className="text-red-500 font-light">{errors.from_name.message}</p>}
             </div>
             <div className="grid gap-2 sansation-bold">
               <Label htmlFor="email">Adresse email</Label>
@@ -38,17 +56,9 @@ export function CardContact() {
                 id="email"
                 type="email"
                 placeholder="m@example.com"
-                required
+                {...register('email', { required: 'Email obligatoire' })}
               />
-            </div>
-            <div className="grid gap-2 sansation-bold">
-              <Label htmlFor="email">Sujet</Label>
-              <Input
-                id="subject"
-                type="text"
-                placeholder="Sujet de votre message"
-                required
-              />
+              {errors.email && <p className="text-red-500 font-light">{errors.email.message}</p>}
             </div>
             <div className="grid gap-2 sansation-bold">
               <div className="flex items-center sansation-bold">
@@ -57,16 +67,22 @@ export function CardContact() {
               <Textarea
                 placeholder=""
                 className="resize-none"
+                {...register('message', { required: 'Message obligatoire' })}
               />
+              {errors.message && <p className="text-red-500 font-light">{errors.message.message}</p>}
             </div>
+            <CardFooter className="flex-col gap-2">
+              <Button type="submit" className="w-full sansation-bold" disabled={isSubmitting}>
+                {
+                  isSubmitting && (
+                    <span className="w-4 h-4 border-2 border-foreground border-t-transparent rounded-full animate-spin"></span>
+                )}
+                {isSubmitting ? "Envoi..." : "Envoyer votre message"}
+              </Button>
+            </CardFooter>
           </div>
-        </form>
-      </CardContent>
-      <CardFooter className="flex-col gap-2">
-        <Button type="submit" className="w-full sansation-bold">
-          Envoyer votre email
-        </Button>
-      </CardFooter>
+        </CardContent>
+      </form>
     </Card>
   )
 }
