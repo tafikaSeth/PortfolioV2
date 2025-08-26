@@ -8,10 +8,12 @@ import { MOBILES, PROJECTS } from "@/constants";
 import NextArrow from "@/components/ui/arrow-next";
 import PrevArrow from "@/components/ui/arrow-prev"
 import { useTranslation } from "react-i18next";
+import useIsMobile from "@/hooks/useResponsive";
 
 
 export default function Projects() {
     const container = useRef(null)
+    const isMobile = useIsMobile()
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
     const { t } = useTranslation();
 
@@ -57,7 +59,10 @@ export default function Projects() {
             <h1 className="text-2xl sansation-bold md:text-4xl font-bold text-center md:text-left">
                 {t('projectsTitle')}
             </h1>
-            <motion.div style={{ x: de }} className="slider-container">
+            <motion.div
+                style={ isMobile ? {} : {x: de} }
+                className="slider-container"
+            >
                 <h1 className="text-center text-xl md:text-2xl md:text-left font-bold mb-3 sansation-bold">
                     {t('frontendDev')}
                 </h1>
@@ -69,7 +74,10 @@ export default function Projects() {
                     ))}
                 </Slider>
             </motion.div>
-            <motion.div style={{ x: sm }} className="slider-container">
+            <motion.div
+                style={isMobile ? {} : { x: sm }}
+                className="slider-container"
+            >
                 <h1 className="text-center text-xl md:text-2xl font-bold mb-3 md:text-left sansation-bold">{t('mobileDev')}</h1>
                 <Slider {...settings}>
                     {MOBILES.map(({ title, image, content, year, url, stack, client }) => (
