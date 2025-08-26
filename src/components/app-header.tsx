@@ -17,6 +17,7 @@ const ICONS: Record<string, JSX.Element> = {
 export default function Navbar() {
     const [active, setActive] = useState("Projets");
     const [scrolled, setScrolled] = useState(false);
+    const { t } = useTranslation();
 
     const handleClick = (id: string) => {
         setActive(id);
@@ -35,7 +36,6 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const { t } = useTranslation();
 
     return (
         <nav className="text-white">
@@ -64,7 +64,9 @@ export default function Navbar() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                    <AvatarWithDialog />
+                    <div className="hidden md:flex items-center gap-3">
+                        <AvatarWithDialog />
+                    </div>
                     <ModeToggle />
                     <LanguageSwitcher />
                 </div>
@@ -83,6 +85,9 @@ export default function Navbar() {
                         <span className="text-xs">{t(`nav.${item.key}`)}</span>
                     </button>
                 ))}
+            </div>
+            <div className="md:hidden fixed bottom-20 right-4 z-50">
+                <AvatarWithDialog className="w-14 h-14 border-2 border-foreground"/>
             </div>
         </nav>
     );

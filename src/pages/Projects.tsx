@@ -12,11 +12,12 @@ import { useTranslation } from "react-i18next";
 
 export default function Projects() {
     const container = useRef(null)
+    const { t } = useTranslation();
     const { scrollYProgress } = useScroll({
         target: container,
         offset: ['start end', 'end start']
     })
-    const sm = useTransform(scrollYProgress, [0, 1], [-450, 400])
+    const sm = useTransform(scrollYProgress, [0, 1], [450, -400])
     const de = useTransform(scrollYProgress, [0, 1], [-450, 400])
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -50,13 +51,15 @@ export default function Projects() {
         prevArrow: <PrevArrow />,
     };
 
-    const { t } = useTranslation();
-
     return (
         <div ref={container} className="p-3 flex flex-col gap-8 w-[100%]">
-            <h1 className="text-2xl sansation-bold md:text-4xl font-bold text-center md:text-left">{t('projectsTitle')}</h1>
+            <h1 className="text-2xl sansation-bold md:text-4xl font-bold text-center md:text-left">
+                {t('projectsTitle')}
+            </h1>
             <motion.div style={{ x: de }} className="slider-container">
-                <h1 className="text-center text-xl md:text-2xl md:text-left font-bold mb-3 sansation-bold">{t('frontendDev')}</h1>
+                <h1 className="text-center text-xl md:text-2xl md:text-left font-bold mb-3 sansation-bold">
+                    {t('frontendDev')}
+                </h1>
                 <Slider {...settings}>
                     {PROJECTS.map(({ title, image, content, year, url, stack, client }) => (
                         <div className="px-3 md:px-0" key={title}>

@@ -9,11 +9,15 @@ import { Separator } from "./ui/separator";
 import { ModalProfil } from "./modals/profil";
 import { BookOpen, CalendarRange, LanguagesIcon } from "lucide-react";
 
-export default function AvatarWithDialog() {
+type Props = {
+  className?: string
+}
+
+export default function AvatarWithDialog({ className }: Props) {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Avatar className="cursor-pointer">
+                <Avatar className={`cursor-pointer ${className}`}>
                     <AvatarImage src="/assets/images/profile.png" alt="profile" />
                     <AvatarFallback>Profile</AvatarFallback>
                 </Avatar>

@@ -46,6 +46,7 @@ export default function Home() {
               onMouseLeave={() => { setIsHovered(false) }}
             >
               SETH TAFIKA
+              
             </motion.h1>
             <motion.p style={{ y: de }} className="text-sm md:text-xl text-center font-bold text-white sansation-regular">{t("devFrontAndMobile")}</motion.p>
           </div>

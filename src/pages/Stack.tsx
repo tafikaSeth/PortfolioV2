@@ -1,8 +1,11 @@
+import { useScroll, useTransform, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 import SectionWrapper from "@/components/layouts/SectionWrapper";
 import { getImage } from "@/lib/cloudinary";
 import { AdvancedImage, lazyload } from "@cloudinary/react";
-import { useScroll, useTransform, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
 import { StackCard } from "@/components/stack/card";
 import Slider from "react-slick";
 import NextArrow from "@/components/ui/arrow-next";
@@ -14,6 +17,8 @@ import Cursor from "@/components/ui/cursor";
 import Marquee from "@/components/stack/Marquee";
 import { useTranslation } from "react-i18next";
 
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
 export default function Stack() {
   const [isHovered, setIsHovered] = useState(false)
   const container = useRef(null)
@@ -21,6 +26,7 @@ export default function Stack() {
   const second = useRef(null)
   const third = useRef(null)
   const fourth = useRef(null)
+  const { t } = useTranslation();
 
   const { scrollYProgress } = useScroll({
     target: container,
@@ -61,8 +67,6 @@ export default function Stack() {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
-
-  const { t } = useTranslation();
 
   return (
     <>
