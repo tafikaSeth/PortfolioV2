@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -5,14 +7,14 @@ import { ProjectCard } from "@/components/projects/card";
 import { MOBILES, PROJECTS } from "@/constants";
 import NextArrow from "@/components/ui/arrow-next";
 import PrevArrow from "@/components/ui/arrow-prev"
-import { useEffect, useRef, useState } from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 
 export default function Projects() {
     const container = useRef(null)
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
     const { t } = useTranslation();
+
     const { scrollYProgress } = useScroll({
         target: container,
         offset: ['start end', 'end start']
@@ -20,7 +22,6 @@ export default function Projects() {
     const sm = useTransform(scrollYProgress, [0, 1], [450, -400])
     const de = useTransform(scrollYProgress, [0, 1], [-450, 400])
 
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
     const getWidth = () => {
         setWindowWidth(window.innerWidth)
     }

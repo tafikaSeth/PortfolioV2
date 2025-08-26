@@ -15,7 +15,7 @@ export function ProjectCard(props: ProjectProps) {
                 <AdvancedImage
                     cldImg={cloudImage}
                     className="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110 group-hover:shadow-2xl"
-                    plugins={[lazyload(), placeholder({ mode: "blur" })]}
+                    plugins={[lazyload(), placeholder({ mode: "sepia" })]}
                 />
             </div>
             <CardFooter className="bg-background border border-b-gray-90/50 flex justify-center rounded-b-sm cursor-pointer w-full font-bold py-2">
