@@ -1,0 +1,28 @@
+{
+    "devFrontAndMobile": "DEVELOPPER FRONTEND & MOBILE",
+    "nav": {
+        "home": "Home",
+        "projects": "Projects",
+        "stack": "Stack",
+        "contact": "Contact"
+    },
+    "projectsTitle": "My Completed Projects",
+    "frontendDev": "Frontend Development",
+    "mobileDev": "Mobile",
+    "webTech": "Web Languages & Technologies",
+    "myStackTitle": "My Technical Stack",
+    "myStackSubtitle": "The right tools make great projects. I built my stack around modern, proven, and efficient solutions to deliver results that meet expectations.",
+    "librariesFrameworks": "Libraries & Frameworks",
+    "database": "Database",
+    "versioningTools": "Version Control Tools",
+    "contactTitle": "Send me your message",
+    "contactSubtitle": "Enter your email address below",
+    "formName": "Name",
+    "formEmail": "Email Address",
+    "formSend": "Send your message",
+    "scrollText": {
+        "get": "GET",
+        "in": "IN",
+        "touch": "TOUCH"
+    }
+}

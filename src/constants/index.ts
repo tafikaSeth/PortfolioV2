@@ -1,8 +1,8 @@
 export const NAVIGATION = [
-    { name: "Home", link: "home", icon: "home" },
-    { name: "Projets", link: "projects", icon: "project" },
-    { name: "Stack", link: "stack", icon: "stack" },
-    { name: "Contact", link: "contact", icon: "contact" },
+  { key: "home", link: "home", icon: "home" },
+  { key: "projects", link: "projects", icon: "project" },
+  { key: "stack", link: "stack", icon: "stack" },
+  { key: "contact", link: "contact", icon: "contact" },
 ];
 
 export const PROJECTS = [
@@ -62,4 +62,4 @@ export const MOBILES = [
     }
 ];
 
-export const TEXTS = ["GET", "IN", "TOUCH"];
+export const TEXT_KEYS = ["get", "in", "touch"];

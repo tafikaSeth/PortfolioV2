@@ -12,6 +12,7 @@ import { Canvas } from "@react-three/fiber";
 import MyAnimatedBox from "@/components/scene";
 import Cursor from "@/components/ui/cursor";
 import Marquee from "@/components/stack/Marquee";
+import { useTranslation } from "react-i18next";
 
 export default function Stack() {
   const [isHovered, setIsHovered] = useState(false)
@@ -61,6 +62,8 @@ export default function Stack() {
     prevArrow: <PrevArrow />,
   };
 
+  const { t } = useTranslation();
+
   return (
     <>
       <Cursor isHovered={isHovered} />
@@ -78,7 +81,7 @@ export default function Stack() {
               onMouseEnter={() => { setIsHovered(true) }}
               onMouseLeave={() => { setIsHovered(false) }}
             >
-              Mon Stack Technique
+              {t("myStackTitle")}
             </motion.h1>
             <motion.p
               onMouseEnter={() => { setIsHovered(true) }}
@@ -86,8 +89,7 @@ export default function Stack() {
               className="text-lg text-white md:text-xl sansation-regular md:text-justify"
               style={{ y: de }}
             >
-              Les bons outils font les bons projets, j’ai construit mon stack autour de solutions modernes,
-              éprouvées et efficaces, afin d’offrir des réalisations à la hauteur des attentes.
+              {t("myStackSubtitle")}
             </motion.p>
           </div>
         </div>
@@ -107,7 +109,7 @@ export default function Stack() {
 
         <div className="relative z-10">
           <motion.div ref={first} className="slider-container">
-            <h1 className="text-xl text-center md:text-2xl font-bold mb-3 md:text-left sansation-bold">Langages & tech web</h1>
+            <h1 className="text-xl text-center md:text-2xl font-bold mb-3 md:text-left sansation-bold">{t("webTech")}</h1>
             <Slider {...settings}>
               {techs.map((tech, index) => (
                 <div key={index} className="px-5 md:px-4">
@@ -118,7 +120,7 @@ export default function Stack() {
           </motion.div>
 
           <motion.div ref={second} className="slider-container mt-8">
-            <h1 className="text-xl text-center md:text-2xl font-bold mb-3 md:text-left sansation-bold">Librairies & framework</h1>
+            <h1 className="text-xl text-center md:text-2xl font-bold mb-3 md:text-left sansation-bold">{t("librariesFrameworks")}</h1>
             <Slider {...settings}>
               {framework.map((tech, index) => (
                 <div key={index} className="px-5 md:px-4">
@@ -129,7 +131,7 @@ export default function Stack() {
           </motion.div>
 
           <motion.div ref={third} className="slider-container mt-8">
-            <h1 className="text-xl text-center md:text-2xl font-bold mb-3 md:text-left sansation-bold">Base de données</h1>
+            <h1 className="text-xl text-center md:text-2xl font-bold mb-3 md:text-left sansation-bold">{t("database")}</h1>
             <Slider {...settings}>
               {databases.map((tech, index) => (
                 <div key={index} className="px-5 md:px-4">
@@ -140,7 +142,7 @@ export default function Stack() {
           </motion.div>
 
           <motion.div ref={fourth} className="slider-container mt-8">
-            <h1 className="text-xl text-center md:text-2xl font-bold mb-3 md:text-left sansation-bold">Outils de versionning</h1>
+            <h1 className="text-xl text-center md:text-2xl font-bold mb-3 md:text-left sansation-bold">{t("versioningTools")}</h1>
             <Slider {...settings}>
               {tech.map((tech, index) => (
                 <div key={index} className="px-5 md:px-4">

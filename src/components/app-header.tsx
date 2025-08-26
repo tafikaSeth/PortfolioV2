@@ -4,6 +4,8 @@ import { ModeToggle } from "./mode-toggle";
 import clsx from "clsx";
 import AvatarWithDialog from "./avatar-with-dialog";
 import { NAVIGATION } from "@/constants";
+import LanguageSwitcher from "./language-switcher";
+import { useTranslation } from "react-i18next";
 
 const ICONS: Record<string, JSX.Element> = {
     home: <Home size={20} />,
@@ -33,6 +35,8 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const { t } = useTranslation();
+
     return (
         <nav className="text-white">
 
@@ -48,12 +52,13 @@ export default function Navbar() {
                 <div className="hidden md:flex gap-10 text-md">
                     {NAVIGATION.map((item) => (
                         <button
-                            key={item.name}
+                            key={item.key}
                             onClick={() => handleClick(item.link)}
                             className={`flex cursor-pointer items-center sansation-regular gap-2 transition ${active === item.link ? "text-green-400" : "text-white"
                                 }`}
                         >
-                            {item.name}
+                            <span className={`icon-${item.icon}`} />
+                            {t(`nav.${item.key}`)}
                         </button>
                     ))}
                 </div>
@@ -61,6 +66,7 @@ export default function Navbar() {
                 <div className="flex items-center gap-3">
                     <AvatarWithDialog />
                     <ModeToggle />
+                    <LanguageSwitcher />
                 </div>
             </div>
 
@@ -68,13 +74,13 @@ export default function Navbar() {
             <div className="flex justify-center items-center gap-8 md:hidden fixed bottom-0 left-0 w-full h-[7%] bg-black border-t border-gray-700 z-50">
                 {NAVIGATION.map((item) => (
                     <button
-                        key={item.name}
+                        key={item.key}
                         onClick={() => handleClick(item.link)}
                         className={`flex flex-col items-center cursor-pointer sansation-regular gap-1 transition ${active === item.link ? "text-green-400" : "text-white"
                             }`}
                     >
                         {ICONS[item.icon]}
-                        <span className="text-xs">{item.name}</span>
+                        <span className="text-xs">{t(`nav.${item.key}`)}</span>
                     </button>
                 ))}
             </div>

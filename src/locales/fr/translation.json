@@ -1,0 +1,28 @@
+{
+    "devFrontAndMobile": "DEVELOPPEUR FRONTEND & MOBILE",
+    "nav": {
+        "home": "Accueil",
+        "projects": "Projets",
+        "stack": "Stack",
+        "contact": "Contact"
+    },
+    "projectsTitle": "Mes projets réalisés",
+    "frontendDev": "Développement frontend",
+    "mobileDev": "Mobile",
+    "webTech": "Langages & tech web",
+    "myStackTitle": "Mon Stack Technique",
+    "myStackSubtitle": "Les bons outils font les bons projets, j’ai construit mon stack autour de solutions modernes, éprouvées et efficaces, afin d’offrir des réalisations à la hauteur des attentes",
+    "librariesFrameworks": "Librairies & framework",
+    "database": "Base de données",
+    "versioningTools": "Outils de versionning",
+    "contactTitle": "Envoyez-moi votre message",
+    "contactSubtitle": "Entrez votre adresse e-mail ci-dessous",
+    "formName": "Nom",
+    "formEmail": "Adresse Email",
+    "formSend": "Envoyer votre message",
+    "scrollText": {
+        "get": "PRENDRE",
+        "in": "CONTACTE",
+        "touch": "AVEC MOI"
+    }
+}

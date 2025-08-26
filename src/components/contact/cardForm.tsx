@@ -14,6 +14,7 @@ import { Textarea } from "../ui/textarea"
 import type { ContactFormData } from "@/types"
 import { sendEmail } from "@/serviceEmail/emailJs"
 import { toast } from "sonner"
+import { useTranslation } from "react-i18next"
 
 export function CardContact() {
 
@@ -28,20 +29,21 @@ export function CardContact() {
       toast.error("Échec de l’envoi 😢");
     }
   };
+  const { t } = useTranslation();
 
   return (
     <Card className="w-full max-w-lg">
       <CardHeader>
-        <CardTitle className="sansation-bold">Envoyez-moi votre message</CardTitle>
+        <CardTitle className="sansation-bold">{t('contactTitle')}</CardTitle>
         <CardDescription className="sansation-regular">
-          Entrez votre adresse e-mail ci-dessous
+          {t('contactSubtitle')}
         </CardDescription>
       </CardHeader>
       <form onSubmit={handleSubmit(onSubmit)}>
         <CardContent>
           <div className="flex flex-col gap-6">
             <div className="grid gap-2 sansation-bold">
-              <Label htmlFor="email">Nom</Label>
+              <Label htmlFor="email">{t('formName')}</Label>
               <Input
                 id="nom"
                 type="text"
@@ -51,7 +53,7 @@ export function CardContact() {
               {errors.from_name && <p className="text-red-500 font-light">{errors.from_name.message}</p>}
             </div>
             <div className="grid gap-2 sansation-bold">
-              <Label htmlFor="email">Adresse email</Label>
+              <Label htmlFor="email">{t('formEmail')}</Label>
               <Input
                 id="email"
                 type="email"
@@ -76,8 +78,8 @@ export function CardContact() {
                 {
                   isSubmitting && (
                     <span className="w-4 h-4 border-2 border-foreground border-t-transparent rounded-full animate-spin"></span>
-                )}
-                {isSubmitting ? "Envoi..." : "Envoyer votre message"}
+                  )}
+                {isSubmitting ? "Envoi..." : t('formSend')}
               </Button>
             </CardFooter>
           </div>

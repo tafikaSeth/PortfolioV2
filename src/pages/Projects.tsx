@@ -7,6 +7,7 @@ import NextArrow from "@/components/ui/arrow-next";
 import PrevArrow from "@/components/ui/arrow-prev"
 import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 
 export default function Projects() {
@@ -49,11 +50,13 @@ export default function Projects() {
         prevArrow: <PrevArrow />,
     };
 
+    const { t } = useTranslation();
+
     return (
         <div ref={container} className="p-3 flex flex-col gap-8 w-[100%]">
-            <h1 className="text-2xl sansation-bold md:text-4xl font-bold text-center md:text-left">Mes projets réalisés</h1>
+            <h1 className="text-2xl sansation-bold md:text-4xl font-bold text-center md:text-left">{t('projectsTitle')}</h1>
             <motion.div style={{ x: de }} className="slider-container">
-                <h1 className="text-center text-xl md:text-2xl md:text-left font-bold mb-3 sansation-bold">Devéloppement frontend</h1>
+                <h1 className="text-center text-xl md:text-2xl md:text-left font-bold mb-3 sansation-bold">{t('frontendDev')}</h1>
                 <Slider {...settings}>
                     {PROJECTS.map(({ title, image, content, year, url, stack, client }) => (
                         <div className="px-3 md:px-0" key={title}>
@@ -63,7 +66,7 @@ export default function Projects() {
                 </Slider>
             </motion.div>
             <motion.div style={{ x: sm }} className="slider-container">
-                <h1 className="text-center text-xl md:text-2xl font-bold mb-3 md:text-left sansation-bold">Mobile</h1>
+                <h1 className="text-center text-xl md:text-2xl font-bold mb-3 md:text-left sansation-bold">{t('mobileDev')}</h1>
                 <Slider {...settings}>
                     {MOBILES.map(({ title, image, content, year, url, stack, client }) => (
                         <div className="px-3 md:px-0" key={title}>

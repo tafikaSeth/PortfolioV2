@@ -9,8 +9,9 @@ import MyAnimatedBox from "@/components/scene";
 import Cursor from "@/components/ui/cursor";
 import Contact from "./Contact";
 import ScrollVelocityText from "@/components/scroll-velocity";
-import { TEXTS } from "@/constants";
+import { TEXT_KEYS } from "@/constants";
 import Stack from "./Stack";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
   const container = useRef(null)
@@ -24,6 +25,8 @@ export default function Home() {
   const de = useTransform(scrollYProgress, [0, 1], [250, -250])
 
   const heroImage = getImage("home_bg3_tzy3fj", 1920);
+
+  const { t } = useTranslation();
 
   return (
     <div className="overflow-x-hidden">
@@ -44,7 +47,7 @@ export default function Home() {
             >
               SETH TAFIKA
             </motion.h1>
-            <motion.p style={{ y: de }} className="text-sm md:text-xl text-center font-bold text-white sansation-regular">DEVELOPPER FRONTEND & MOBILE</motion.p>
+            <motion.p style={{ y: de }} className="text-sm md:text-xl text-center font-bold text-white sansation-regular">{t("devFrontAndMobile")}</motion.p>
           </div>
         </div>
       </SectionWrapper>
@@ -65,7 +68,7 @@ export default function Home() {
         </div>
       </SectionWrapper>
       <SectionWrapper fullWidth>
-        <ScrollVelocityText texts={TEXTS} />
+        <ScrollVelocityText texts={TEXT_KEYS} />
       </SectionWrapper>
       <SectionWrapper fullWidth={false}>
         <div id="contact">
