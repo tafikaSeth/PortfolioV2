@@ -23,6 +23,8 @@ export default function Projects() {
     })
     const sm = useTransform(scrollYProgress, [0, 1], [450, -400])
     const de = useTransform(scrollYProgress, [0, 1], [-450, 400])
+    const smMobile = useTransform(scrollYProgress, [0, 1], [0, 0])
+    const deMobile = useTransform(scrollYProgress, [0, 1], [0, 0])
 
     const getWidth = () => {
         setWindowWidth(window.innerWidth)
@@ -60,7 +62,7 @@ export default function Projects() {
                 {t('projectsTitle')}
             </h1>
             <motion.div
-                style={ isMobile ? {} : {x: de} }
+                style={ isMobile ? {x: deMobile} : {x: de} }
                 className="slider-container"
             >
                 <h1 className="text-center text-xl md:text-2xl md:text-left font-bold mb-3 sansation-bold">
@@ -75,7 +77,7 @@ export default function Projects() {
                 </Slider>
             </motion.div>
             <motion.div
-                style={isMobile ? {} : { x: sm }}
+                style={isMobile ? {x: smMobile} : { x: sm }}
                 className="slider-container"
             >
                 <h1 className="text-center text-xl md:text-2xl font-bold mb-3 md:text-left sansation-bold">{t('mobileDev')}</h1>
