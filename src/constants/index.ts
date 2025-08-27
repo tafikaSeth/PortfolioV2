@@ -38,6 +38,14 @@ export const PROJECTS = [
         stack: ["ReactJs", "Css", "React three"],
         year: 2025,
         url: "https://sethtafika-3d.vercel.app/"
+    },
+    {
+        title: "Agent RAG",
+        image: "rag_j7zem7",
+        content: "Création d'un agent rag en basant sur mes info pour répondre à toutes questions des uilisateurs",
+        stack: ["ReactTs", "Css", "NodeJs", "Express"],
+        year: 2025,
+        url: "Pas encore en ligne"
     }
 ];
 
