@@ -6,6 +6,7 @@ export default function PrevArrow({ onClick }: CustomArrowProps) {
         <button
             className="absolute top-1/2 left-8 -translate-y-1/2 z-10 bg-background p-2 rounded-full cursor-pointer"
             onClick={onClick}
+            aria-label="Slide précédent"
         >
             <ArrowBigLeft />
         </button>

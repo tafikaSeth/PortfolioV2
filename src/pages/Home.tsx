@@ -35,6 +35,7 @@ export default function Home() {
         <div id="home" ref={container} className="w-full relative h-[100vh]">
           <AdvancedImage
             cldImg={heroImage}
+            alt="Background home image"
             className="absolute w-full h-full object-cover"
             plugins={[lazyload()]}
           />

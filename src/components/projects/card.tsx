@@ -14,6 +14,7 @@ export function ProjectCard(props: ProjectProps) {
             <div className="group overflow-hidden">
                 <AdvancedImage
                     cldImg={cloudImage}
+                    alt="Background image"
                     className="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110 group-hover:shadow-2xl"
                     plugins={[lazyload(), placeholder({ mode: "sepia" })]}
                 />
@@ -21,9 +22,9 @@ export function ProjectCard(props: ProjectProps) {
             <CardFooter className="bg-background border border-b-gray-90/50 flex justify-center rounded-b-sm cursor-pointer w-full font-bold py-2">
                 <Dialog>
                     <DialogTrigger asChild>
-                        <span className="text-foreground sansation-bold">
+                        <button className="text-foreground sansation-bold w-full text-center cursor-pointer" aria-label={`Button voir le projet ${title}`}>
                             {title}
-                        </span>
+                        </button>
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-[50%] border-none p-0">
                         <ModalProject {...props} />

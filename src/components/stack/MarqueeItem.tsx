@@ -26,7 +26,7 @@ const MarqueeItem = ({ images, from, to }: MyProp) => {
         className="flex flex-shrink-0"
       >
         {images.map((image, index) => {
-          return <img className="w-40 p-5" src={image} key={index} />;
+          return <img className="w-40 p-5" src={image} key={index} alt="stack"/>;
         })}
       </motion.div>
     </div>

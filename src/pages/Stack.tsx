@@ -51,7 +51,7 @@ export default function Stack() {
     slidesToScroll: 1,
     autoplaySpeed: 2000,
     cssEase: "ease-in-out",
-    nextArrow: NextArrow || <div />, // flèche fallback
+    nextArrow: NextArrow || <div />,
     prevArrow: PrevArrow || <div />,
   };
 
@@ -64,6 +64,7 @@ export default function Stack() {
         <div className="w-full relative h-[100vh]">
           <AdvancedImage
             cldImg={heroImage}
+            alt="Background stack image"
             className="absolute w-full h-full object-cover"
             plugins={[lazyload()]}
           />

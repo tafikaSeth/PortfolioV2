@@ -29,6 +29,7 @@ export function CardContact() {
       toast.error("Échec de l’envoi 😢");
     }
   };
+
   const { t } = useTranslation();
 
   return (
@@ -43,9 +44,9 @@ export function CardContact() {
         <CardContent>
           <div className="flex flex-col gap-6">
             <div className="grid gap-2 sansation-bold">
-              <Label htmlFor="email">{t('formName')}</Label>
+              <Label htmlFor="from_name">{t('formName')}</Label>
               <Input
-                id="nom"
+                id="from_name"
                 type="text"
                 placeholder="Votre nom"
                 {...register('from_name', { required: 'Nom obligatoire' })}
@@ -64,9 +65,10 @@ export function CardContact() {
             </div>
             <div className="grid gap-2 sansation-bold">
               <div className="flex items-center sansation-bold">
-                <Label htmlFor="password">Message</Label>
+                <Label htmlFor="message">Message</Label>
               </div>
               <Textarea
+                id="message"
                 placeholder=""
                 className="resize-none"
                 {...register('message', { required: 'Message obligatoire' })}
@@ -74,7 +76,7 @@ export function CardContact() {
               {errors.message && <p className="text-red-500 font-light">{errors.message.message}</p>}
             </div>
             <CardFooter className="flex-col gap-2">
-              <Button type="submit" className="w-full sansation-bold" disabled={isSubmitting}>
+              <Button type="submit" className="w-full sansation-bold" disabled={isSubmitting} aria-label="Button envoie de message">
                 {
                   isSubmitting && (
                     <span className="w-4 h-4 border-2 border-foreground border-t-transparent rounded-full animate-spin"></span>

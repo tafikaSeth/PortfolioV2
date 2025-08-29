@@ -17,6 +17,7 @@ export default function LanguageSwitcher() {
       variant='secondary'
       size="icon"
       className="relative rounded-full cursor-pointer"
+      aria-label="Changer la langue"
     >
 
       <span
@@ -31,6 +32,7 @@ export default function LanguageSwitcher() {
           countryCode="FR"
           svg
           style={{ width: "1.0em", height: "1.5em" }}
+          aria-label="French"
         />
       </span>
 
@@ -46,6 +48,7 @@ export default function LanguageSwitcher() {
           countryCode="GB"
           svg
           style={{ width: "1.0em", height: "1.5em" }}
+          aria-label="English"
         />
       </span>
     </Button>

@@ -11,6 +11,7 @@ export function ModalProject({ image, title, content, stack, client, year, url }
             <div className="w-full h-80">
                 <AdvancedImage
                     cldImg={cloudImage}
+                    alt="Background home image"
                     className="w-full h-full object-cover"
                     plugins={[lazyload(), placeholder({ mode: "blur" })]}
                 />
@@ -54,6 +55,7 @@ export function ModalProject({ image, title, content, stack, client, year, url }
                 <Button
                     variant="secondary"
                     className="w-full bg-background font-bold sansation-bold"
+                    aria-label="Button visiter le site"
                     asChild
                 >
                     <a

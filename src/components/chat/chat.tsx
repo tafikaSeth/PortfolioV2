@@ -66,7 +66,7 @@ export function QuestionResponse() {
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
         />
-        <Button type="submit" disabled={loading}>
+        <Button type="submit" disabled={loading} aria-label="Button envoyer question">
           {loading ? <Loader2 className="animate-spin h-4 w-4" /> : "Envoyer"}
         </Button>
       </form>
