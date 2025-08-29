@@ -44,7 +44,7 @@ export default function Navbar() {
                 className={clsx(
                     "flex fixed top-0 left-0 w-full justify-around items-center px-6 py-4 transition-colors duration-500 z-50",
                     scrolled
-                        ? "bg-gray-900"
+                        ? "bg-black"
                         : "bg-transparent"
                 )}
             >
