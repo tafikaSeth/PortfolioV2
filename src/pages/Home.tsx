@@ -1,17 +1,19 @@
 import { useScroll, useTransform, motion } from "framer-motion"
 import { AdvancedImage, lazyload } from "@cloudinary/react";
-import Projects from "./Projects";
-import { useRef, useState } from "react";
+import { useRef, useState, Suspense, lazy } from "react";
 import { getImage } from "@/lib/cloudinary";
 import SectionWrapper from "@/components/layouts/SectionWrapper";
 import { Canvas } from "@react-three/fiber";
-import MyAnimatedBox from "@/components/scene";
 import Cursor from "@/components/ui/cursor";
-import Contact from "./Contact";
-import ScrollVelocityText from "@/components/scroll-velocity";
 import { TEXT_KEYS } from "@/constants";
-import Stack from "./Stack";
 import { useTranslation } from "react-i18next";
+
+// Lazy load all components
+const Projects = lazy(() => import("./Projects"));
+const Stack = lazy(() => import("./Stack"));
+const Contact = lazy(() => import("./Contact"));
+const ScrollVelocityText = lazy(() => import("@/components/scroll-velocity"));
+const MyAnimatedBox = lazy(() => import("@/components/scene"));
 
 export default function Home() {
   const container = useRef(null)
@@ -26,7 +28,6 @@ export default function Home() {
   const de = useTransform(scrollYProgress, [0, 1], [250, -250])
 
   const heroImage = getImage("home_bg3_tzy3fj", 1335);
-
 
   return (
     <div className="overflow-x-hidden">
@@ -46,7 +47,6 @@ export default function Home() {
               onMouseLeave={() => { setIsHovered(false) }}
             >
               SETH TAFIKA
-
             </motion.h1>
             <motion.p style={{ y: de }} className="text-sm md:text-xl text-center font-bold text-white sansation-regular">{t("devFrontAndMobile")}</motion.p>
           </div>
@@ -56,24 +56,34 @@ export default function Home() {
         <div className="absolute inset-0 z-0 w-full h-full pointer-events-none">
           <Canvas>
             <ambientLight intensity={0.5} />
-            <MyAnimatedBox />
+            <Suspense fallback={null}>
+              <MyAnimatedBox />
+            </Suspense>
           </Canvas>
         </div>
         <div id="projects" className="relative z-10">
-          <Projects />
+          <Suspense fallback={null}>
+            <Projects />
+          </Suspense>
         </div>
       </SectionWrapper>
       <SectionWrapper fullWidth>
         <div id="stack">
-          <Stack />
+          <Suspense fallback={null}>
+            <Stack />
+          </Suspense>
         </div>
       </SectionWrapper>
       <SectionWrapper fullWidth>
-        <ScrollVelocityText texts={TEXT_KEYS} />
+        <Suspense fallback={null}>
+          <ScrollVelocityText texts={TEXT_KEYS} />
+        </Suspense>
       </SectionWrapper>
       <SectionWrapper fullWidth={false}>
         <div id="contact">
-          <Contact />
+          <Suspense fallback={null}>
+            <Contact />
+          </Suspense>
         </div>
       </SectionWrapper>
     </div>
