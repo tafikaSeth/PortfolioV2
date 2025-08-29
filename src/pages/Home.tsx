@@ -3,7 +3,6 @@ import { AdvancedImage, lazyload } from "@cloudinary/react";
 import { useRef, useState, Suspense, lazy } from "react";
 import { getImage } from "@/lib/cloudinary";
 import SectionWrapper from "@/components/layouts/SectionWrapper";
-import { Canvas } from "@react-three/fiber";
 import Cursor from "@/components/ui/cursor";
 import { TEXT_KEYS } from "@/constants";
 import { useTranslation } from "react-i18next";
@@ -13,7 +12,7 @@ const Projects = lazy(() => import("./Projects"));
 const Stack = lazy(() => import("./Stack"));
 const Contact = lazy(() => import("./Contact"));
 const ScrollVelocityText = lazy(() => import("@/components/scroll-velocity"));
-const MyAnimatedBox = lazy(() => import("@/components/scene"));
+const CanvaScene = lazy(() => import("../components/canva"));
 
 export default function Home() {
   const container = useRef(null)
@@ -54,12 +53,9 @@ export default function Home() {
       </SectionWrapper>
       <SectionWrapper fullWidth={false} className="relative">
         <div className="absolute inset-0 z-0 w-full h-full pointer-events-none">
-          <Canvas>
-            <ambientLight intensity={0.5} />
-            <Suspense fallback={null}>
-              <MyAnimatedBox />
-            </Suspense>
-          </Canvas>
+          <Suspense fallback={null}>
+            <CanvaScene />
+          </Suspense>
         </div>
         <div id="projects" className="relative z-10">
           <Suspense fallback={null}>

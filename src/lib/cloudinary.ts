@@ -14,5 +14,5 @@ export const getImage = (path: string, width = 1200) => {
     .image(path)
     .resize(fill().width(width))
     .delivery(quality(auto()))
-    .delivery(format(auto()));
+    .delivery(format(auto()))
 };

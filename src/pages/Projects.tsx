@@ -35,7 +35,7 @@ export default function Projects() {
         return () => {
             window.removeEventListener('resize', getWidth)
         }
-    }, [windowWidth])
+    }, [])
 
     const slidesToShow = windowWidth <= 480
         ? 1
