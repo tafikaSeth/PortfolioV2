@@ -10,6 +10,6 @@ export const sendEmail = async (data: ContactFormData) => {
       message: data.message,
       from_name: data.from_name,
     },
-    import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string
+    import.meta.env.VITE_EMAILJS_PUBLIC as string
   );
 };
