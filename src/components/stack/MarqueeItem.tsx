@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 
 interface MyProp {
-  images: string[]
-  from: string | number
-  to: string | number
+  images: string[];
+  from: string | number;
+  to: string | number;
 }
+
 const MarqueeItem = ({ images, from, to }: MyProp) => {
   return (
     <div className="flex">
@@ -14,9 +15,14 @@ const MarqueeItem = ({ images, from, to }: MyProp) => {
         transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
         className="flex flex-shrink-0"
       >
-        {images.map((image, index) => {
-          return <img className="w-40 p-5" src={image} key={index} />;
-        })}
+        {images.map((image, index) => (
+          <img
+            className="w-40 p-5"
+            src={image}
+            key={index}
+            alt={`Logo ${index + 1}`}
+          />
+        ))}
       </motion.div>
 
       <motion.div
@@ -25,13 +31,17 @@ const MarqueeItem = ({ images, from, to }: MyProp) => {
         transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
         className="flex flex-shrink-0"
       >
-        {images.map((image, index) => {
-          return <img className="w-40 p-5" src={image} key={index} alt="stack"/>;
-        })}
+        {images.map((image, index) => (
+          <img
+            className="w-40 p-5"
+            src={image}
+            key={index}
+            alt={`Logo ${index + 1 + images.length}`}
+          />
+        ))}
       </motion.div>
     </div>
   );
 };
 
 export default MarqueeItem;
-

@@ -11,7 +11,13 @@ export function ModeToggle() {
   }
 
   return (
-    <Button onClick={toggleTheme} variant="secondary" size="icon" className="relative m-3 rounded-full cursor-pointer">
+    <Button
+      onClick={toggleTheme}
+      variant="secondary"
+      size="icon"
+      className="relative m-3 rounded-full cursor-pointer"
+      aria-label={theme === "light" ? "Activer le mode sombre" : "Activer le mode clair"}
+    >
       <Sun
         className={clsx(
           "h-[1.2rem] w-[1.2rem] absolute transition-all duration-500 ease-in-out",
