@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+body[data-radix-scroll-lock="true"] {
+  overflow: auto !important;
+  padding-right: 0 !important;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @font-face {

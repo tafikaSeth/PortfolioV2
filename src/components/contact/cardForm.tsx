@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "../ui/textarea"
 import type { ContactFormData } from "@/types"
-import { sendEmail } from "@/serviceEmail/emailJs"
+import { sendEmail } from "@/services/emailJs"
 import { toast } from "sonner"
 import { useTranslation } from "react-i18next"
 
