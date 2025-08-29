@@ -2,6 +2,22 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: 'Eagle Lake';
+  src: url('/assets/font/EagleLake-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sansation';
+  src: url('/assets/font/Sansation-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -145,24 +161,6 @@
   font-family: "Sansation", sans-serif;
   font-weight: 700;
   font-style: normal;
-}
-
-.sansation-light-italic {
-  font-family: "Sansation", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.sansation-regular-italic {
-  font-family: "Sansation", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.sansation-bold-italic {
-  font-family: "Sansation", sans-serif;
-  font-weight: 700;
-  font-style: italic;
 }
 
 
