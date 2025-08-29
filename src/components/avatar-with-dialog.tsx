@@ -18,7 +18,7 @@ export default function AvatarWithDialog({ className }: Props) {
         <Dialog>
             <DialogTrigger asChild>
                 <Avatar className={`cursor-pointer ${className}`}>
-                    <AvatarImage src="/assets/images/profile.png" alt="profile" />
+                    <AvatarImage src="/assets/images/profile.webp" alt="profile" />
                     <AvatarFallback>Profile</AvatarFallback>
                 </Avatar>
             </DialogTrigger>

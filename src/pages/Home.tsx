@@ -15,6 +15,7 @@ import { useTranslation } from "react-i18next";
 
 export default function Home() {
   const container = useRef(null)
+  const { t } = useTranslation();
   const [isHovered, setIsHovered] = useState(false)
 
   const { scrollYProgress } = useScroll({
@@ -24,9 +25,8 @@ export default function Home() {
   const sm = useTransform(scrollYProgress, [0, 1], [500, -500])
   const de = useTransform(scrollYProgress, [0, 1], [250, -250])
 
-  const heroImage = getImage("home_bg3_tzy3fj", 1920);
+  const heroImage = getImage("home_bg3_tzy3fj", 1335);
 
-  const { t } = useTranslation();
 
   return (
     <div className="overflow-x-hidden">
@@ -46,7 +46,7 @@ export default function Home() {
               onMouseLeave={() => { setIsHovered(false) }}
             >
               SETH TAFIKA
-              
+
             </motion.h1>
             <motion.p style={{ y: de }} className="text-sm md:text-xl text-center font-bold text-white sansation-regular">{t("devFrontAndMobile")}</motion.p>
           </div>
