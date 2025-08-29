@@ -1,5 +1,5 @@
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
@@ -8,16 +8,16 @@ import { getImage } from "@/lib/cloudinary";
 import { AdvancedImage, lazyload } from "@cloudinary/react";
 import { StackCard } from "@/components/stack/card";
 import Slider from "react-slick";
-import NextArrow from "@/components/ui/arrow-next";
-import PrevArrow from "@/components/ui/arrow-prev";
 import { databases, framework, tech, techs } from "@/constants/stack";
 import { Canvas } from "@react-three/fiber";
-import MyAnimatedBox from "@/components/scene";
 import Cursor from "@/components/ui/cursor";
-import Marquee from "@/components/stack/Marquee";
 import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+const NextArrow = lazy(() => import("@/components/ui/arrow-next"));
+const PrevArrow = lazy(() => import("@/components/ui/arrow-prev"));
+const MyAnimatedBox = lazy(() => import("@/components/scene"));
+const Marquee = lazy(() => import("@/components/stack/Marquee"));
 
 export default function Stack() {
   const [isHovered, setIsHovered] = useState(false)
@@ -64,8 +64,8 @@ export default function Stack() {
     slidesToScroll: 1,
     autoplaySpeed: 2000,
     cssEase: "ease-in-out",
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    nextArrow: <Suspense fallback={null}><NextArrow /></Suspense>,
+    prevArrow: <Suspense fallback={null}><PrevArrow /></Suspense>,
   };
 
   return (
@@ -100,14 +100,18 @@ export default function Stack() {
       </SectionWrapper>
 
       <div className="mb-8 overflow-x-hidden">
-        <Marquee />
+        <Suspense fallback={null}>
+          <Marquee />
+        </Suspense>
       </div>
 
       <SectionWrapper fullWidth={false} className="relative">
         <div className="absolute inset-0 z-0">
           <Canvas>
             <ambientLight intensity={0.5} />
-            <MyAnimatedBox />
+            <Suspense fallback={null}>
+              <MyAnimatedBox />
+            </Suspense>
           </Canvas>
         </div>
 
