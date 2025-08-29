@@ -55,7 +55,7 @@ export default function AvatarWithDialog({ className }: Props) {
                             <div className="p-4 border-1 border-white rounded-sm w-[90%]">
                                 <div className=" flex flex-row items-center gap-5">
                                     <Avatar>
-                                        <AvatarImage src="/assets/images/profile.png" alt="profile" />
+                                        <AvatarImage src="/assets/images/profile.webp" alt="profile" />
                                         <AvatarFallback>Profile</AvatarFallback>
                                     </Avatar>
                                     <div>
