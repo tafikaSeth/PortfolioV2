@@ -46,6 +46,14 @@ export const PROJECTS = [
         stack: ["ReactTs", "Css", "NodeJs", "Express"],
         year: 2025,
         url: "Pas encore en ligne"
+    },
+    {
+        title: "E-Commerce Admin Dashboard",
+        image: "commerce_joy849",
+        content: "E-Commerce Admin Dashboard est une application web qui permet de gérer les produits, les utilisateurs et les commandes d'une boutique en ligne.",
+        stack: ["ReactTs", "TailwindCss", "Shadcn"],
+        year: 2025,
+        url: "https://ventesbyseth.vercel.app"
     }
 ];
 
