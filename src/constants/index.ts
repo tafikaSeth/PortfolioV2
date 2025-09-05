@@ -62,11 +62,19 @@ export const MOBILES = [
     {
         title: "Generate",
         image: "generate_h39ehs",
-        content: "Crétion d'un application mobile pour générer et scanner des QRcode avec un interface plus attirante pour elargir mes compétences en développement mobile",
+        content: "Création d'un application mobile pour générer et scanner des QRcode avec un interface plus attirante pour elargir mes compétences en développement mobile",
         stack: ["Expo", "EAS Build"],
         client: "Amis",
         year: 2025,
         url: ""
+    },
+    {
+        title: "E-commerce",
+        image: "e_commerce_gkqram",
+        content: "Une application mobile que j'ai créer pour faire des achats en ligne des meubles avec un interface simple et facile à utiliser",
+        stack: ["Flutter", "Dart"],
+        year: 2025,
+        url: "https://github.com/tafikaSeth/e_commerce.git"
     }
 ];
 

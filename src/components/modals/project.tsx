@@ -63,7 +63,7 @@ export function ModalProject({ image, title, content, stack, client, year, url }
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Visiter le site
+                        Visiter
                     </a>
                 </Button>
             </div>
