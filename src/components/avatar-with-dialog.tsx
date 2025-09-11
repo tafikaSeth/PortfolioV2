@@ -25,7 +25,6 @@ export default function AvatarWithDialog({ className }: Props) {
 
     return (
         <>
-            {/* Menu au clic sur Avatar */}
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                     <Avatar className={`cursor-pointer ${className}`}>
@@ -43,94 +42,94 @@ export default function AvatarWithDialog({ className }: Props) {
                 </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Dialog Profil */}
             <Dialog open={openDialog === "profil"} onOpenChange={() => setOpenDialog(null)}>
-                <DialogContent className="sm:max-w-[35%] border-none">
-                    <div className="flex justify-center items-center gap-5 flex-col">
+                <DialogContent className="w-[95vw] max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl border-none max-h-[90vh] overflow-hidden">
+                    <div className="flex justify-center items-center gap-3 sm:gap-5 flex-col">
                         <ModalProfil />
-                        <h1 className="text-2xl">MON PROFILE</h1>
+                        <h1 className="text-lg sm:text-xl md:text-2xl font-semibold">MON PROFILE</h1>
                     </div>
-                    <ScrollArea className="h-72 w-full">
-                        <div className="flex flex-col items-center-safe">
-                            <div className="p-4 border-1 border-white rounded-sm w-[90%]">
-                                <div className=" flex flex-row items-center gap-5">
-                                    <Avatar>
+                    <ScrollArea className="h-64 sm:h-72 md:h-80 lg:h-96 w-full">
+                        <div className="flex flex-col items-center px-2 sm:px-4">
+                            <div className="p-3 sm:p-4 border border-white rounded-sm w-full max-w-lg">
+                                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-5">
+                                    <Avatar className="flex-shrink-0">
                                         <AvatarImage src="/assets/images/profile.webp" alt="profile" />
                                         <AvatarFallback>Profile</AvatarFallback>
                                     </Avatar>
-                                    <div>
-                                        <h1 className="text-xl">SETH TAFIKA</h1>
-                                        <p>Développeur Front & Mobile</p>
+                                    <div className="text-center sm:text-left">
+                                        <h1 className="text-lg sm:text-xl font-semibold">SETH TAFIKA</h1>
+                                        <p className="text-sm sm:text-base">Développeur Front & Mobile</p>
                                     </div>
                                 </div>
                                 <Separator className="my-3" />
-                                <div className=" flex flex-row items-center gap-5">
-                                    <Avatar>
+                                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-5">
+                                    <Avatar className="flex-shrink-0">
                                         <LanguagesIcon />
                                     </Avatar>
-                                    <div>
-                                        <h1 className="text-xl">Langues</h1>
-                                        <p>Français, Anglais</p>
+                                    <div className="text-center sm:text-left">
+                                        <h1 className="text-lg sm:text-xl font-semibold">Langues</h1>
+                                        <p className="text-sm sm:text-base">Français, Anglais</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <h1 className="text-xl m-7 self-start text-center md:text-left">
+                            <h1 className="text-lg sm:text-xl font-semibold m-4 sm:m-7 self-start text-center sm:text-left w-full">
                                 Diplomes et certifications
                             </h1>
-                            <div className="p-4 border-1 border-white rounded-sm w-[90%]">
-                                <div className=" flex flex-row items-center gap-5">
-                                    <Avatar>
+                            <div className="p-3 sm:p-4 border border-white rounded-sm w-full max-w-lg">
+                                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-5">
+                                    <Avatar className="flex-shrink-0">
                                         <BookOpen />
                                     </Avatar>
-                                    <div>
-                                        <h1 className="text-xl">2023: Licence en Informatique </h1>
-                                        <p>EMIT-Ecole de Management et d'Innovation Technologique</p>
+                                    <div className="text-center sm:text-left">
+                                        <h1 className="text-base sm:text-xl font-semibold">2023: Licence en Informatique</h1>
+                                        <p className="text-sm sm:text-base">EMIT-Ecole de Management et d'Innovation Technologique</p>
                                     </div>
                                 </div>
                                 <Separator className="my-3" />
-                                <div className=" flex flex-row items-center gap-5">
-                                    <Avatar>
+                                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-5">
+                                    <Avatar className="flex-shrink-0">
                                         <CalendarRange />
                                     </Avatar>
-                                    <div>
-                                        <h1 className="text-xl">2024: Certification </h1>
-                                        <p>2ème-Hackathon "Mois de l'innovation"</p>
+                                    <div className="text-center sm:text-left">
+                                        <h1 className="text-base sm:text-xl font-semibold">2024: Certification</h1>
+                                        <p className="text-sm sm:text-base">2ème-Hackathon "Mois de l'innovation"</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <h1 className="text-xl m-7 self-start text-center md:text-left">
+                            {/* Section Expériences */}
+                            <h1 className="text-lg sm:text-xl font-semibold m-4 sm:m-7 self-start text-center sm:text-left w-full">
                                 Expériences
                             </h1>
-                            <div className="p-4 border-1 border-white rounded-sm w-[90%]">
-                                <div className=" flex flex-row items-center gap-5">
-                                    <Avatar>
+                            <div className="p-3 sm:p-4 border border-white rounded-sm w-full max-w-lg mb-4">
+                                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-5">
+                                    <Avatar className="flex-shrink-0">
                                         <BookOpen />
                                     </Avatar>
-                                    <div>
-                                        <h1 className="text-xl">Avril 2025 - Maintenant: Développeur Front & mobile </h1>
-                                        <p>ESN ARATO Antambohobe Fianarantsoa </p>
+                                    <div className="text-center sm:text-left">
+                                        <h1 className="text-sm sm:text-xl font-semibold">Avril 2025 - Maintenant: Développeur Front & mobile</h1>
+                                        <p className="text-sm sm:text-base">ESN ARATO Antambohobe Fianarantsoa</p>
                                     </div>
                                 </div>
                                 <Separator className="my-3" />
-                                <div className=" flex flex-row items-center gap-5">
-                                    <Avatar>
+                                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-5">
+                                    <Avatar className="flex-shrink-0">
                                         <CalendarRange />
                                     </Avatar>
-                                    <div>
-                                        <h1 className="text-xl">2024: Dévelopeur mobile</h1>
-                                        <p>Projet PNUD</p>
+                                    <div className="text-center sm:text-left">
+                                        <h1 className="text-sm sm:text-xl font-semibold">2024: Développeur mobile</h1>
+                                        <p className="text-sm sm:text-base">Projet PNUD</p>
                                     </div>
                                 </div>
                                 <Separator className="my-3" />
-                                <div className=" flex flex-row items-center gap-5">
-                                    <Avatar>
+                                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-5">
+                                    <Avatar className="flex-shrink-0">
                                         <CalendarRange />
                                     </Avatar>
-                                    <div>
-                                        <h1 className="text-xl">2024: Dévelopeur Frontend</h1>
-                                        <p>Hackathon "Mois de l'innovation</p>
+                                    <div className="text-center sm:text-left">
+                                        <h1 className="text-sm sm:text-xl font-semibold">2024: Développeur Frontend</h1>
+                                        <p className="text-sm sm:text-base">Hackathon "Mois de l'innovation"</p>
                                     </div>
                                 </div>
                             </div>
@@ -139,9 +138,8 @@ export default function AvatarWithDialog({ className }: Props) {
                 </DialogContent>
             </Dialog>
 
-            {/* Dialog Chat IA */}
             <Dialog open={openDialog === "chat"} onOpenChange={() => setOpenDialog(null)}>
-                <DialogContent className="sm:max-w-[40%]">
+                <DialogContent className="w-[95vw] max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
                     <QuestionResponse />
                 </DialogContent>
             </Dialog>

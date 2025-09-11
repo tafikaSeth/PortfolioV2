@@ -26,8 +26,10 @@ export function ProjectCard(props: ProjectProps) {
                             {title}
                         </button>
                     </DialogTrigger>
-                    <DialogContent className="sm:max-w-[50%] border-none p-0">
-                        <ModalProject {...props} />
+                    <DialogContent className="w-[95vw] max-w-sm xs:max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-4xl border-none p-0 max-h-[95vh] overflow-hidden">
+                        <div className="max-h-[95vh] overflow-y-auto">
+                            <ModalProject {...props} />
+                        </div>
                     </DialogContent>
                 </Dialog>
             </CardFooter>

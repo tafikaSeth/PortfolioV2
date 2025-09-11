@@ -39,16 +39,23 @@ export default function Home() {
             className="absolute w-full h-full object-cover"
             plugins={[lazyload()]}
           />
-          <div className="flex flex-col gap-2 top-1/4 left-[18%] absolute md:top-1/4 md:left-[38%]">
-            <motion.h1
-              className="text-4xl md:text-7xl font-bold text-white sansation-bold"
-              style={{ y: sm }}
-              onMouseEnter={() => { setIsHovered(true) }}
-              onMouseLeave={() => { setIsHovered(false) }}
-            >
-              SETH TAFIKA
-            </motion.h1>
-            <motion.p style={{ y: de }} className="text-sm md:text-xl text-center font-bold text-white sansation-regular">{t("devFrontAndMobile")}</motion.p>
+          <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 -translate-y-24 sm:-translate-y-36 md:-translate-y-48">
+            <div className="flex flex-col items-center gap-2 text-center max-w-4xl mx-auto">
+              <motion.h1
+                className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white sansation-bold leading-tight"
+                style={{ y: sm }}
+                onMouseEnter={() => { setIsHovered(true) }}
+                onMouseLeave={() => { setIsHovered(false) }}
+              >
+                SETH TAFIKA
+              </motion.h1>
+              <motion.p 
+                style={{ y: de }} 
+                className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-center font-bold text-white sansation-regular max-w-2xl mx-auto"
+              >
+                {t("devFrontAndMobile")}
+              </motion.p>
+            </div>
           </div>
         </div>
       </SectionWrapper>

@@ -57,37 +57,43 @@ export default function Projects() {
     };
 
     return (
-        <div ref={container} className="p-3 flex flex-col gap-8 w-[100%]">
-            <h1 className="text-2xl sansation-bold md:text-4xl font-bold text-center md:text-left">
+        <div ref={container} className="p-3 sm:p-4 md:p-6 lg:p-8 flex flex-col gap-4 sm:gap-6 md:gap-8 w-full max-w-7xl mx-auto">
+            <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl sansation-bold font-bold text-center md:text-left">
                 {t('projectsTitle')}
             </h1>
             <motion.div
                 style={ isMobile ? {x: deMobile} : {x: de} }
-                className="slider-container"
+                className="slider-container w-full"
             >
-                <h1 className="text-center text-xl md:text-2xl md:text-left font-bold mb-3 sansation-bold">
+                <h1 className="text-center text-lg xs:text-xl sm:text-xl md:text-2xl lg:text-3xl md:text-left font-bold mb-2 sm:mb-3 md:mb-4 sansation-bold">
                     {t('frontendDev')}
                 </h1>
-                <Slider {...settings}>
-                    {PROJECTS.map(({ title, image, content, year, url, stack, client }) => (
-                        <div className="px-3 md:px-0" key={title}>
-                            <ProjectCard title={title} image={image} content={content} url={url} year={year} stack={stack} client={client} />
-                        </div>
-                    ))}
-                </Slider>
+                <div className="px-2 sm:px-0">
+                    <Slider {...settings}>
+                        {PROJECTS.map(({ title, image, content, year, url, stack, client }) => (
+                            <div className="px-2 sm:px-3 md:px-4" key={title}>
+                                <ProjectCard title={title} image={image} content={content} url={url} year={year} stack={stack} client={client} />
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
             </motion.div>
             <motion.div
                 style={isMobile ? {x: smMobile} : { x: sm }}
-                className="slider-container"
+                className="slider-container w-full"
             >
-                <h1 className="text-center text-xl md:text-2xl font-bold mb-3 md:text-left sansation-bold">{t('mobileDev')}</h1>
-                <Slider {...settings}>
-                    {MOBILES.map(({ title, image, content, year, url, stack, client }) => (
-                        <div className="px-3 md:px-0" key={title}>
-                            <ProjectCard title={title} image={image} content={content} url={url} year={year} stack={stack} client={client} />
-                        </div>
-                    ))}
-                </Slider>
+                <h1 className="text-center text-lg xs:text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3 md:mb-4 md:text-left sansation-bold">
+                    {t('mobileDev')}
+                </h1>
+                <div className="px-2 sm:px-0">
+                    <Slider {...settings}>
+                        {MOBILES.map(({ title, image, content, year, url, stack, client }) => (
+                            <div className="px-2 sm:px-3 md:px-4" key={title}>
+                                <ProjectCard title={title} image={image} content={content} url={url} year={year} stack={stack} client={client} />
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
             </motion.div>
         </div>
     );
