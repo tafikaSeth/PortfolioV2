@@ -6,7 +6,7 @@ import { StackCard } from "@/components/stack/card";
 import { databases, framework, tech, techs } from "@/constants/stack";
 import Cursor from "@/components/ui/cursor";
 import { useTranslation } from "react-i18next";
-const Marquee = lazy(() => import("@/components/stack/Marquee"));
+const LogoAnimate = lazy(() => import("@/components/stack/logoAnimate").then(mod => ({ default: mod.LogoAnimate })));
 const CanvaScene = lazy(() => import("../components/canva"));
 const Slider = lazy(() => import("react-slick"));
 
@@ -93,7 +93,8 @@ export default function Stack() {
       {/* MARQUEE */}
       <div className="mb-8 overflow-x-hidden">
         <Suspense fallback={null}>
-          <Marquee />
+          <LogoAnimate direction="right" speed={120}/>
+          <LogoAnimate direction="left" speed={100}/>
         </Suspense>
       </div>
 

@@ -24,5 +24,7 @@
         "get": "GET",
         "in": "IN",
         "touch": "TOUCH"
-    }
+    },
+    "develepedBy": "Developed by",
+    "allRightsReserved": "All rights reserved"
 }
