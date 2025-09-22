@@ -7,29 +7,21 @@ export const NAVIGATION = [
 
 export const PROJECTS = [
     {
-        title: "Mikrea",
-        image: "mikrea_bmvfan",
-        content: "Intégration du site web du projet MikRea afin d'élargir mes compétences en développement frontend web",
-        stack: ["NextJs", "Css"],
-        client: "Amis",
-        year: 2023,
-        url: "Pas encore en ligne"
+        title: "Amoron'i mania",
+        image: "country_tzjgow",
+        content: "Développement du site web du region AMORON'I MANIA pour mettre en valeur la visibilté de la region ainsi d'attirer les touristes",
+        stack: ["React", "Tailwindcss", "ShadcnUI"],
+        client: "",
+        year: 2025,
+        url: "https://amoronimania.vercel.app/"
     },
     {
-        title: "Enjoy'B",
-        image: "enjoyB_egk0nh",
-        content: "Intégration d'un site web pour lire, ajouter et télécharger une bande dessinée.",
-        stack: ["NextJs", "Css"],
-        year: 2024,
-        url: "https://enjoyb-seth.vercel.app/"
-    },
-    {
-        title: "Ancien portfolio",
-        image: "h_vtuoep",
-        content: "Création de mon portfolio pour vous montrer mes compétences en développement frontend web",
-        stack: ["ReactJs", "Css", "Framer motion"],
-        year: 2024,
-        url: "https://sethtafika.vercel.app"
+        title: "E-Commerce Admin Dashboard",
+        image: "commerce_joy849",
+        content: "E-Commerce Admin Dashboard est une application web qui permet de gérer les produits, les utilisateurs et les commandes d'une boutique en ligne.",
+        stack: ["ReactTs", "TailwindCss", "Shadcn"],
+        year: 2025,
+        url: "https://ventesbyseth.vercel.app"
     },
     {
         title: "Portfolio 3d",
@@ -48,13 +40,30 @@ export const PROJECTS = [
         url: "Pas encore en ligne"
     },
     {
-        title: "E-Commerce Admin Dashboard",
-        image: "commerce_joy849",
-        content: "E-Commerce Admin Dashboard est une application web qui permet de gérer les produits, les utilisateurs et les commandes d'une boutique en ligne.",
-        stack: ["ReactTs", "TailwindCss", "Shadcn"],
-        year: 2025,
-        url: "https://ventesbyseth.vercel.app"
-    }
+        title: "Ancien portfolio",
+        image: "h_vtuoep",
+        content: "Création de mon portfolio pour vous montrer mes compétences en développement frontend web",
+        stack: ["ReactJs", "Css", "Framer motion"],
+        year: 2024,
+        url: "https://sethtafika.vercel.app"
+    },
+    {
+        title: "Mikrea",
+        image: "mikrea_bmvfan",
+        content: "Intégration du site web du projet MikRea afin d'élargir mes compétences en développement frontend web",
+        stack: ["NextJs", "Css"],
+        client: "Amis",
+        year: 2023,
+        url: "Pas encore en ligne"
+    },
+    {
+        title: "Enjoy'B",
+        image: "enjoyB_egk0nh",
+        content: "Intégration d'un site web pour lire, ajouter et télécharger une bande dessinée.",
+        stack: ["NextJs", "Css"],
+        year: 2024,
+        url: "https://enjoyb-seth.vercel.app/"
+    },
 ];
 
 export const MOBILES = [
