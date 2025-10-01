@@ -25,7 +25,7 @@ const Contact = () => {
             <div className="flex flex-col gap-4 md:flex md:flex-row md:gap-12 w-[100%] items-center justify-center">
                 <motion.div
                     className="grid grid-col-1 w-[90%] gap-4 md:grid md:grid-cols-2"
-                    style={ isMobile ? {x: smMobile} : {x: sm} }
+                    // style={isMobile ? { x: smMobile } : { x: sm }}
                 >
                     <CardText icon={<MapPin size={30} />} title="Adresse" description="Madagascar" />
                     <CardText icon={<IoMdMail size={30} />} title="Email" description="tafikaseth@gmail.com" />
@@ -34,7 +34,7 @@ const Contact = () => {
                 </motion.div>
                 <motion.div
                     className="flex w-[90%] gap-5 flex-col md:flex-row justify-between items-center"
-                    style={ isMobile ? {x: deMobile} : {x: de} }
+                    // style={isMobile ? { x: deMobile } : { x: de }}
                 >
                     <CardContact />
                 </motion.div>

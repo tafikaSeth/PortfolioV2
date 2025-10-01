@@ -6,12 +6,15 @@ import SectionWrapper from "@/components/layouts/SectionWrapper";
 import Cursor from "@/components/ui/cursor";
 import { TEXT_KEYS } from "@/constants";
 import { useTranslation } from "react-i18next";
+import ScrollVelocity from "@/components/scroll-velocity";
+import Loader from "@/components/loader";
 
 // Lazy load all components
 const Projects = lazy(() => import("./Projects"));
 const Stack = lazy(() => import("./Stack"));
+const Services = lazy(() => import("./Services"));
 const Contact = lazy(() => import("./Contact"));
-const ScrollVelocityText = lazy(() => import("@/components/scroll-velocity"));
+const ScrollVelocityText = lazy(() => import("@/components/section-text"));
 const CanvaScene = lazy(() => import("../components/canva"));
 
 export default function Home() {
@@ -49,8 +52,8 @@ export default function Home() {
               >
                 SETH TAFIKA
               </motion.h1>
-              <motion.p 
-                style={{ y: de }} 
+              <motion.p
+                style={{ y: de }}
                 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-center font-bold text-white sansation-regular max-w-2xl mx-auto"
               >
                 {t("devFrontAndMobile")}
@@ -61,31 +64,46 @@ export default function Home() {
       </SectionWrapper>
       <SectionWrapper fullWidth={false} className="relative">
         <div className="absolute inset-0 z-0 w-full h-full pointer-events-none">
-          <Suspense fallback={null}>
+          <Suspense fallback={<Loader />}>
             <CanvaScene />
           </Suspense>
         </div>
         <div id="projects" className="relative z-10">
-          <Suspense fallback={null}>
+          <Suspense fallback={<Loader />}>
             <Projects />
           </Suspense>
         </div>
       </SectionWrapper>
       <SectionWrapper fullWidth>
         <div id="stack">
-          <Suspense fallback={null}>
+          <Suspense fallback={<Loader />}>
             <Stack />
           </Suspense>
         </div>
       </SectionWrapper>
       <SectionWrapper fullWidth>
-        <Suspense fallback={null}>
+
+      <ScrollVelocity
+        texts={['Développement Front-end', ' Développement Mobile']}
+        velocity={50}
+        className="custom-scroll-text sm:text-sm md:text-lg lg:text-3xl xl:text-5xl font-extrabold text-background sansation-bold"
+      />
+      </SectionWrapper>
+      <SectionWrapper fullWidth={false}>
+        <div id="service" className="relative z-10">
+          <Suspense fallback={<Loader />}>
+            <Services />
+          </Suspense>
+        </div>
+      </SectionWrapper>
+      <SectionWrapper fullWidth>
+        <Suspense fallback={<Loader />}>
           <ScrollVelocityText texts={TEXT_KEYS} />
         </Suspense>
       </SectionWrapper>
       <SectionWrapper fullWidth={false}>
         <div id="contact">
-          <Suspense fallback={null}>
+          <Suspense fallback={<Loader />}>
             <Contact />
           </Suspense>
         </div>

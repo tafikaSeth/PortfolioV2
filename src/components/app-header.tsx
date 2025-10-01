@@ -23,7 +23,7 @@ export default function Navbar() {
         setActive(id);
         const element = document.getElementById(id);
         if (element) {
-            element.scrollIntoView({ behavior: "smooth", block: "start" });
+            element.scrollIntoView({ behavior: "smooth", block: "end" });
         }
     };
 
@@ -48,7 +48,7 @@ export default function Navbar() {
                         : "bg-transparent"
                 )}
             >
-                <h1 className="text-4xl font-bold sansation-bold text-white">SETH</h1>
+                <h1 className="text-4xl font-bold sansation-bold text-white cursor-pointer" onClick={() => handleClick("home")}>SETH</h1>
                 <div className="hidden md:flex gap-10 text-md">
                     {NAVIGATION.map((item) => (
                         <button

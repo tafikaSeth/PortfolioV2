@@ -1,16 +1,26 @@
 export const NAVIGATION = [
-  { key: "home", link: "home", icon: "home" },
+//   { key: "home", link: "home", icon: "home" },
   { key: "projects", link: "projects", icon: "project" },
   { key: "stack", link: "stack", icon: "stack" },
+  { key: "service", link: "service", icon: "service" },
   { key: "contact", link: "contact", icon: "contact" },
 ];
 
 export const PROJECTS = [
     {
+        title: "Portfolio de Cynthia",
+        image: "ceth_kf1kax",
+        content: "Développement d'un portfolio pour une conseillère clientèle afin de mettre en valeur ses compétences et son travail",
+        stack: ["ReactJs", "Tailwindcss", "ShadcnUI", "Framer motion"],
+        client: "Cynthia Rakotoharinomena",
+        year: 2025,
+        url: "https://cynthia-rakotoharinomena.vercel.app/"
+    },
+    {
         title: "Amoron'i mania",
         image: "country_tzjgow",
         content: "Développement du site web du region AMORON'I MANIA pour mettre en valeur la visibilté de la region ainsi d'attirer les touristes",
-        stack: ["React", "Tailwindcss", "ShadcnUI"],
+        stack: ["ReactJs", "Tailwindcss", "ShadcnUI"],
         client: "",
         year: 2025,
         url: "https://amoronimania.vercel.app/"
@@ -19,9 +29,17 @@ export const PROJECTS = [
         title: "E-Commerce Admin Dashboard",
         image: "commerce_joy849",
         content: "E-Commerce Admin Dashboard est une application web qui permet de gérer les produits, les utilisateurs et les commandes d'une boutique en ligne.",
-        stack: ["ReactTs", "TailwindCss", "Shadcn"],
+        stack: ["ReactJs", "TailwindCss", "Shadcn"],
         year: 2025,
         url: "https://ventesbyseth.vercel.app"
+    },
+    {
+        title: "Portfolio v2",
+        image: "v2_kfklru",
+        content: "Création de mon portfolio version 2",
+        stack: ["ReactJs", "i18n", "Tailwindcss", "ShadcnUI", "Framer motion"],
+        year: 2025,
+        url: "https://sethtafika-v2.vercel.app/"
     },
     {
         title: "Portfolio 3d",
@@ -35,7 +53,7 @@ export const PROJECTS = [
         title: "Agent RAG",
         image: "rag_j7zem7",
         content: "Création d'un agent rag en basant sur mes info pour répondre à toutes questions des uilisateurs",
-        stack: ["ReactTs", "Css", "NodeJs", "Express"],
+        stack: ["ReactJs", "Css", "NodeJs", "Express"],
         year: 2025,
         url: "Pas encore en ligne"
     },
