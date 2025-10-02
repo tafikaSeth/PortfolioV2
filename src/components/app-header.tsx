@@ -1,5 +1,5 @@
 import { useEffect, useState, type JSX } from "react";
-import { Home, Briefcase, Layers, Mail } from "lucide-react";
+import { Home, Briefcase, Layers, Mail, Shield } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
 import clsx from "clsx";
 import AvatarWithDialog from "./avatar-with-dialog";
@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next";
 const ICONS: Record<string, JSX.Element> = {
     home: <Home size={20} />,
     project: <Briefcase size={20} />,
+    service: <Shield  size={20} />,
     stack: <Layers size={20} />,
     contact: <Mail size={20} />,
 };

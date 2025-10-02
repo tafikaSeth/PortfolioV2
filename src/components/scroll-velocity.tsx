@@ -63,7 +63,7 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
             damping: damping ?? 50,
             stiffness: stiffness ?? 400
         });
-        const velocityFactor = useTransform(
+        const velocityFactor = useTransform<number, number>(
             smoothVelocity,
             velocityMapping?.input || [0, 1000],
             velocityMapping?.output || [0, 5],
@@ -112,7 +112,7 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
                 <motion.div
                     className={`${scrollerClassName} flex whitespace-nowrap text-white text-center font-sans text-3xl font-bold tracking-[-0.02em] drop-shadow md:text-[5rem] md:leading-[5rem]`}
                     style={{ x, ...scrollerStyle }}
-                >  
+                >
                     {spans}
                 </motion.div>
             </div>

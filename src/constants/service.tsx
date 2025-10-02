@@ -1,5 +1,5 @@
 import type { ServiceConfig } from "@/types";
-import { Code, Plug, Smartphone } from "lucide-react";
+import { Briefcase, Code, Globe, Plug, Smartphone } from "lucide-react";
 
 export const SERVICES_CONFIG: ServiceConfig[] = [
     {
@@ -13,6 +13,18 @@ export const SERVICES_CONFIG: ServiceConfig[] = [
         descriptionKey: "mobileDevDescription",
         icon: Smartphone,
         iconColor: "text-purple-600"
+    },
+    {
+        titleKey: "servicePortfolio",
+        descriptionKey: "portfolioDescription",
+        icon: Briefcase,
+        iconColor: "text-orange-600"
+    },
+    {
+        titleKey: "serviceShowcase",
+        descriptionKey: "showcaseDescription",
+        icon: Globe,
+        iconColor: "text-cyan-600"
     },
     {
         titleKey: "serviceApiIntegration",
