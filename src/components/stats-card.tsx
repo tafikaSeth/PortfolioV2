@@ -13,9 +13,9 @@ interface StatsCardProps {
 
 const StatsCard: React.FC<StatsCardProps> = ({ stats }) => {
   const defaultStats: StatItem[] = [
-      { value: '3', label: "Années d'expérience" },
+      { value: '03', label: "Années d'expérience" },
     { value: '10', label: 'Projets réalisés' },
-    { value: '2', label: "Projets livrés" },
+    { value: '02', label: "Projets livrés" },
   ];
 
   const displayStats = stats || defaultStats;
