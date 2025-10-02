@@ -1,5 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import Waves from './prism';
+import { useTranslation } from 'react-i18next';
 
 interface StatItem {
     value: string | number;
@@ -11,10 +12,12 @@ interface StatsCardProps {
 }
 
 const StatsCard: React.FC<StatsCardProps> = ({ stats }) => {
+    const { t } = useTranslation();
+
     const defaultStats: StatItem[] = [
-        { value: '03', label: "Années d'expérience" },
-        { value: '12', label: 'Projets réalisés' },
-        { value: '02', label: "Projets livrés" },
+        { value: '03', label: t("yearsExperience") },
+        { value: '12', label: t("projectsCompleted") },
+        { value: '02', label: t("projectsDelivered") },
     ];
 
     const displayStats = stats || defaultStats;
