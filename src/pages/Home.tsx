@@ -8,6 +8,7 @@ import { TEXT_KEYS } from "@/constants";
 import { useTranslation } from "react-i18next";
 import ScrollVelocity from "@/components/scroll-velocity";
 import Loader from "@/components/loader";
+import StatsCard from "@/components/stats-card";
 
 // Lazy load all components
 const Projects = lazy(() => import("./Projects"));
@@ -63,6 +64,9 @@ export default function Home() {
         </div>
       </SectionWrapper>
       <SectionWrapper fullWidth={false} className="relative">
+        <StatsCard />
+      </SectionWrapper>
+      <SectionWrapper fullWidth={false} className="relative">
         <div className="absolute inset-0 z-0 w-full h-full pointer-events-none">
           <Suspense fallback={<Loader />}>
             <CanvaScene />
@@ -82,12 +86,11 @@ export default function Home() {
         </div>
       </SectionWrapper>
       <SectionWrapper fullWidth>
-
-      <ScrollVelocity
-        texts={['Développement Front-end', ' Développement Mobile']}
-        velocity={50}
-        className="custom-scroll-text sm:text-sm md:text-lg lg:text-3xl xl:text-5xl font-extrabold text-background sansation-bold"
-      />
+        <ScrollVelocity
+          texts={['Développement Front-end', ' Développement Mobile']}
+          velocity={50}
+          className="custom-scroll-text sm:text-sm md:text-lg lg:text-3xl xl:text-5xl font-extrabold text-background sansation-bold"
+        />
       </SectionWrapper>
       <SectionWrapper fullWidth={false}>
         <div id="service" className="relative z-10">
