@@ -72,7 +72,7 @@ export default function Projects() {
                     <Slider {...settings}>
                         {PROJECTS.map(({ title, image, content, year, url, stack, client }) => (
                             <div className="px-2 sm:px-3 md:px-4" key={title}>
-                                <ProjectCard title={title} image={image} content={content} url={url} year={year} stack={stack} client={client} />
+                                <ProjectCard title={title} image={image} content={content} url={url} year={year} stack={stack} client={client} type="frontend"/>
                             </div>
                         ))}
                     </Slider>
@@ -89,7 +89,7 @@ export default function Projects() {
                     <Slider {...settings}>
                         {MOBILES.map(({ title, image, content, year, url, stack, client }) => (
                             <div className="px-2 sm:px-3 md:px-4" key={title}>
-                                <ProjectCard title={title} image={image} content={content} url={url} year={year} stack={stack} client={client} />
+                                <ProjectCard title={title} image={image} content={content} url={url} year={year} stack={stack} client={client} type="mobile"/>
                             </div>
                         ))}
                     </Slider>

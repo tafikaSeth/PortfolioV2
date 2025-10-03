@@ -14,7 +14,8 @@ export const PROJECTS = [
         stack: ["ReactJs", "Tailwindcss", "ShadcnUI", "Framer motion"],
         client: "Cynthia Rakotoharinomena",
         year: 2025,
-        url: "https://cynthia-rakotoharinomena.vercel.app/"
+        url: "https://cynthia-rakotoharinomena.vercel.app/",
+        type: 'frontend'
     },
     {
         title: "Amoron'i mania",
@@ -23,7 +24,8 @@ export const PROJECTS = [
         stack: ["ReactJs", "Tailwindcss", "ShadcnUI"],
         client: "",
         year: 2025,
-        url: "https://amoronimania.vercel.app/"
+        url: "https://amoronimania.vercel.app/",
+        type: 'frontend'
     },
     {
         title: "E-Commerce Admin Dashboard",
@@ -31,7 +33,8 @@ export const PROJECTS = [
         content: "E-Commerce Admin Dashboard est une application web qui permet de gérer les produits, les utilisateurs et les commandes d'une boutique en ligne.",
         stack: ["ReactJs", "TailwindCss", "Shadcn"],
         year: 2025,
-        url: "https://ventesbyseth.vercel.app"
+        url: "https://ventesbyseth.vercel.app",
+        type: 'frontend'
     },
     {
         title: "Portfolio v2",
@@ -39,7 +42,8 @@ export const PROJECTS = [
         content: "Création de mon portfolio version 2",
         stack: ["ReactJs", "i18n", "Tailwindcss", "ShadcnUI", "Framer motion"],
         year: 2025,
-        url: "https://sethtafika-v2.vercel.app/"
+        url: "https://sethtafika-v2.vercel.app/",
+        type: 'frontend'
     },
     {
         title: "Portfolio 3d",
@@ -47,7 +51,8 @@ export const PROJECTS = [
         content: "Création d'un portfolio 3D pour apprendre et acquérir des nouveaux connaissances en 3D ",
         stack: ["ReactJs", "Css", "React three"],
         year: 2025,
-        url: "https://sethtafika-3d.vercel.app/"
+        url: "https://sethtafika-3d.vercel.app/",
+        type: 'frontend'
     },
     {
         title: "Agent RAG",
@@ -55,7 +60,8 @@ export const PROJECTS = [
         content: "Création d'un agent rag en basant sur mes info pour répondre à toutes questions des uilisateurs",
         stack: ["ReactJs", "Css", "NodeJs", "Express"],
         year: 2025,
-        url: "Pas encore en ligne"
+        url: "Pas encore en ligne",
+        type: 'frontend'
     },
     {
         title: "Ancien portfolio",
@@ -63,7 +69,8 @@ export const PROJECTS = [
         content: "Création de mon portfolio pour vous montrer mes compétences en développement frontend web",
         stack: ["ReactJs", "Css", "Framer motion"],
         year: 2024,
-        url: "https://sethtafika.vercel.app"
+        url: "https://sethtafika.vercel.app",
+        type: 'frontend'
     },
     {
         title: "Mikrea",
@@ -72,7 +79,8 @@ export const PROJECTS = [
         stack: ["NextJs", "Css"],
         client: "Amis",
         year: 2023,
-        url: "Pas encore en ligne"
+        url: "Pas encore en ligne",
+        type: 'frontend'
     },
     {
         title: "Enjoy'B",
@@ -80,7 +88,8 @@ export const PROJECTS = [
         content: "Intégration d'un site web pour lire, ajouter et télécharger une bande dessinée.",
         stack: ["NextJs", "Css"],
         year: 2024,
-        url: "https://enjoyb-seth.vercel.app/"
+        url: "https://enjoyb-seth.vercel.app/",
+        type: 'frontend'
     },
 ];
 
@@ -92,7 +101,8 @@ export const MOBILES = [
         stack: ["Expo", "EAS Build", "Google maps", "Qgis", "OSM"],
         client: "PNUD",
         year: 2025,
-        url: ""
+        url: "",
+        type: 'mobile'
     },
     {
         title: "Generate",
@@ -101,7 +111,8 @@ export const MOBILES = [
         stack: ["Expo", "EAS Build"],
         client: "Amis",
         year: 2025,
-        url: ""
+        url: "",
+        type: 'mobile'
     },
     {
         title: "E-commerce",
@@ -109,7 +120,8 @@ export const MOBILES = [
         content: "Une application mobile que j'ai créer pour faire des achats en ligne des meubles avec un interface simple et facile à utiliser",
         stack: ["Flutter", "Dart"],
         year: 2025,
-        url: "https://github.com/tafikaSeth/e_commerce.git"
+        url: "https://github.com/tafikaSeth/e_commerce.git",
+        type: 'mobile'
     }
 ];
 

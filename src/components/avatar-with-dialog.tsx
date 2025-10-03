@@ -15,6 +15,7 @@ import { Separator } from "./ui/separator"
 import { ModalProfil } from "./modals/profil"
 import { BookOpen, CalendarRange, LanguagesIcon } from "lucide-react"
 import { QuestionResponse } from "./chat/chat"
+import { useTranslation } from "react-i18next"
 
 type Props = {
     className?: string
@@ -22,6 +23,7 @@ type Props = {
 
 export default function AvatarWithDialog({ className }: Props) {
     const [openDialog, setOpenDialog] = useState<"profil" | "chat" | null>(null)
+    const { t } = useTranslation();
 
     return (
         <>
@@ -34,7 +36,7 @@ export default function AvatarWithDialog({ className }: Props) {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start">
                     <DropdownMenuItem onClick={() => setOpenDialog("profil")}>
-                        Voir mon profil
+                        {t("viewMyprofile")}
                     </DropdownMenuItem>
                     <DropdownMenuItem onClick={() => setOpenDialog("chat")}>
                         Questions ?

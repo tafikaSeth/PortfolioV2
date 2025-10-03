@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { askQuestionApi } from "@/services/chat";
+import { useTranslation } from "react-i18next";
 
 type QAEntry = {
   question: string;
@@ -14,6 +15,8 @@ export function QuestionResponse() {
   const [question, setQuestion] = useState("");
   const [history, setHistory] = useState<QAEntry[]>([]);
   const [loading, setLoading] = useState(false);
+
+  const { t } = useTranslation();
 
   const askQuestion = async () => {
     if (!question.trim()) return;
@@ -42,12 +45,10 @@ export function QuestionResponse() {
 
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-xl font-semibold">💬 Pose ta question</h1>
-
-      {/* Zone des réponses */}
+      <h1 className="text-xl font-semibold">{t("askYourQuestion")}</h1>
       <ScrollArea className="h-64 w-full border rounded-md p-3">
         {history.length === 0 ? (
-          <p className="text-sm text-muted-foreground">Aucune question posée pour l’instant.</p>
+          <p className="text-sm text-muted-foreground">{t("noQuestionsYet")}</p>
         ) : (
           history.map((entry, index) => (
             <div key={index} className="mb-4">
@@ -58,16 +59,14 @@ export function QuestionResponse() {
           ))
         )}
       </ScrollArea>
-
-      {/* Formulaire */}
       <form onSubmit={handleSubmit} className="flex gap-2">
         <Input
-          placeholder="Écrire une question..."
+          placeholder={t("writeAQuestion")}
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
         />
         <Button type="submit" disabled={loading} aria-label="Button envoyer question">
-          {loading ? <Loader2 className="animate-spin h-4 w-4" /> : "Envoyer"}
+          {loading ? <Loader2 className="animate-spin h-4 w-4" /> : t("send")}
         </Button>
       </form>
     </div>

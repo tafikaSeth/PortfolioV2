@@ -6,6 +6,7 @@ export interface ProjectProps {
     year: number
     url: string
     stack: string[]
+    type?: 'frontend' | 'mobile'
 }
 export interface ContactFormData {
     from_name: string
